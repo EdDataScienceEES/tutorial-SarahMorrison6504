@@ -2,8 +2,7 @@ Machine Learning Using Continuous Data
 ---------------------------
 We will begin with a recap on linear modelling and then continue onto how we can delve deeper into our data and see how it may change in the future ! We are using `knn.reg` to make projections, using algorithms from observed data. This is a continuation from the Machine Learning in R Turorial (see here- https://ourcodingclub.github.io/tutorials/machine-learning/) except we will look at continuous data rather than categorical. Finally, we will map out these projections and see how these can be visualised for communicating results.
 
-<img align='left' width = '200' height = '200' src='https://github.com/user-attachments/assets/d4a2ae9c-e45c-4988-a839-c9f48980333f' />
-
+<img align='left' width = '200' height = '150' src='https://github.com/user-attachments/assets/d4a2ae9c-e45c-4988-a839-c9f48980333f' />
 
 ### Tutorial Aims
 
@@ -15,33 +14,105 @@ We will begin with a recap on linear modelling and then continue onto how we can
 
 
 
-# Subheading 1
-## Subheading 2
-### Subheading 3
 
-Often whe
+
+
+
+### Background Info
+
+Often when analysing data in ecology and environmental science we use modelling to determine the effect explanatory variables have on response variables such as linear regression and generalised linear models. For example, we can determine the extent to which climate change impacts temperatures or precipitation rates in different areas by looking at observed data over time. 
+But what if we want to see how this will change in the future? Machine learning can be a useful tool to make projections on future climate trends. In this tutorial we will use a basic k NN regression to demonstrate the potential for using Rstudio to project continuous data using algorithms, with the example of annual temperatures across the UK. We will then look at how these projections can be communicated.
+
+NOTE: This tutorial aims to introduce the ideas of k NN regression however there is always a level of uncertainty when making projections.
 
 You can get all of the resources for this tutorial from <a href="https://github.com/ourcodingclub/CC-EAB-tut-ideas" target="_blank">this GitHub repository</a>. Clone and download the repo as a zip file, then unzip it.
 
 <a name="section1"></a>
 
-## 1. The first section
-
-
-At the beginning of your tutorial you can ask people to open `RStudio`, create a new script by clicking on `File/ New File/ R Script` set the working directory and load some packages, for example `ggplot2` and `dplyr`. You can surround package names, functions, actions ("File/ New...") and small chunks of code with backticks, which defines them as inline code blocks and makes them stand out among the text, e.g. `ggplot2`.
-
-When you have a larger chunk of code, you can paste the whole code in the `Markdown` document and add three backticks on the line before the code chunks starts and on the line after the code chunks ends. After the three backticks that go before your code chunk starts, you can specify in which language the code is written, in our case `R`.
-
-To find the backticks on your keyboard, look towards the top left corner on a Windows computer, perhaps just above `Tab` and before the number one key. On a Mac, look around the left `Shift` key. You can also just copy the backticks from below.
+## Getting Started
+We will be using the dataset uk.long.csv, so be sure to setwd to where you located the unzipped files. We will be using the following packages, so make sure to have them downloaded and loaded onto a new `R Script`:
 
 ```r
 # Set the working directory
 setwd("your_filepath")
 
 # Load packages
-library(ggplot2)
+library(caret)
 library(dplyr)
+library(tidymodels)
+library(ggplot2)
+library(tidyr)
+library(gmodels)
+library(randomForest)
+library(FNN)
+library(ggeffects)
 ```
+First, lets inspect our data:
+
+```r
+str(uk_long)  # view structure of data
+head(uk_long)  # get summary of first 6 rows
+```
+
+
+We can see that we have a dataset with 3 variables, 'year', 'ann' and 'Country'. Here 'ann' is annual mean temperature. 
+
+### Lets visualise our data
+(TIP: use () in the command to automatically see the plot!)
+
+```r
+(scatter <- ggplot(uk_long, aes(x = year, y = ann, colour = Country))+  # use ggplot to make scatter plot
+    geom_line(size = 1, alpha = 0.6)+  # adjust size of line
+    theme_classic()+
+    theme(legend.position = 'right'))  # move legend to the right
+```
+
+<img width = '500' height = '300' src= 'https://github.com/user-attachments/assets/54466297-63ec-4c01-bf21-877bc0766364' />
+
+
+We could model this data to determine the extent of the trends in our data.
+First find the distribution:
+
+```r
+hist(uk_long$ann)  # plot histogram to see distribution of our data
+```
+<img width = '500' height = '400' src= 'https://github.com/user-attachments/assets/a41073af-e873-45ee-9953-1f31d1ec5f10' />
+
+
+As our trends are normally distributed we could use a linear regression to show the changes in temperature over time in each country. 
+
+```r
+annual_lm <- lm(ann ~ year + Country, data = uk_long)  # model considering country as a fixed effect
+
+summary(annual_lm)  # summary table of model
+
+```
+Output:
+```r
+Coefficients:
+                         Estimate Std. Error t value Pr(>|t|)    
+(Intercept)             -8.439224   0.995177  -8.480  < 2e-16 ***
+year                     0.009033   0.000509  17.747  < 2e-16 ***
+CountryNorthern Ireland -0.584786   0.058182 -10.051  < 2e-16 ***
+CountryScotland         -2.055071   0.058182 -35.322  < 2e-16 ***
+CountryWales            -0.419857   0.058182  -7.216 1.76e-12 ***
+```
+Our output shows that generally there is an increase in 0.009 °C per year (from the estimate column for 'year'. 'year' is the reference country, which in this case is England. The table also tells us that Northern Ireland is on average 0.58 °C, Scotland 2°C and Wales 0.42°C cooler than England.
+
+We can check the model is appropriate by checking the residuals
+
+```r
+plot(annual_lm)
+```
+Which gives us:
+
+
+<img width = '500' height = '400' src= 'https://github.com/user-attachments/assets/82e9a77b-5403-48de-919a-f42ce9b62f6a' />
+
+So our model has a good fit ! Which shows that the estimates on increases per year are pretty accurate:)
+
+
+
 
 <a name="section2"></a>
 
