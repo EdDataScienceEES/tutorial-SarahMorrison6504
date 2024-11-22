@@ -1,26 +1,25 @@
-<center><img src="{{ site.baseurl }}/tutheaderbl.png" alt="Img"></center>
+Machine Learning Using Continuous Data
+---------------------------
+We will begin with a recap on linear modelling and then continue onto how we can delve deeper into our data and see how it may change in the future ! We are using `knn.reg` to make projections, using algorithms from observed data. This is a continuation from the Machine Learning in R Turorial (see here- https://ourcodingclub.github.io/tutorials/machine-learning/) except we will look at continuous data rather than categorical. Finally, we will map out these projections and see how these can be visualised for communicating results.
 
-To add images, replace `tutheaderbl1.png` with the file name of any image you upload to your GitHub repository.
+<img align='left' width = '200' height = '200' src='https://github.com/user-attachments/assets/d4a2ae9c-e45c-4988-a839-c9f48980333f' />
+
 
 ### Tutorial Aims
 
-#### <a href="#section1"> 1. The first section</a>
+#### <a href="#section1"> 1. Recap on linear modelling</a>
 
-#### <a href="#section2"> 2. The second section</a>
+#### <a href="#section2"> 2. Making data projections using k NN regression</a>
 
-#### <a href="#section3"> 3. The third section</a>
+#### <a href="#section3"> 3. Mapping trends</a>
 
-You can read this text, then delete it and replace it with your text about your tutorial: what are the aims, what code do you need to achieve them?
----------------------------
-We are using `<a href="#section_number">text</a>` to create anchors within our text. For example, when you click on section one, the page will automatically go to where you have put `<a name="section_number"></a>`.
 
-To create subheadings, you can use `#`, e.g. `# Subheading 1` creates a subheading with a large font size. The more hashtags you add, the smaller the text becomes. If you want to make text bold, you can surround it with `__text__`, which creates __text__. For italics, use only one understore around the text, e.g. `_text_`, _text_.
 
 # Subheading 1
 ## Subheading 2
 ### Subheading 3
 
-This is some introductory text for your tutorial. Explain the skills that will be learned and why they are important. Set the tutorial in context.
+Often whe
 
 You can get all of the resources for this tutorial from <a href="https://github.com/ourcodingclub/CC-EAB-tut-ideas" target="_blank">this GitHub repository</a>. Clone and download the repo as a zip file, then unzip it.
 
