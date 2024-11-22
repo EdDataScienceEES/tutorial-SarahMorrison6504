@@ -1,561 +1,561 @@
-"","year","ann","Country"
-"1",1884,7.05,"Scotland"
-"2",1885,5.96,"Scotland"
-"3",1886,5.94,"Scotland"
-"4",1887,6.58,"Scotland"
-"5",1888,6.18,"Scotland"
-"6",1889,7.04,"Scotland"
-"7",1890,6.96,"Scotland"
-"8",1891,6.55,"Scotland"
-"9",1892,5.7,"Scotland"
-"10",1893,7.43,"Scotland"
-"11",1894,6.96,"Scotland"
-"12",1895,6.2,"Scotland"
-"13",1896,7.07,"Scotland"
-"14",1897,6.8,"Scotland"
-"15",1898,7.55,"Scotland"
-"16",1899,7.12,"Scotland"
-"17",1900,6.84,"Scotland"
-"18",1901,7.01,"Scotland"
-"19",1902,6.43,"Scotland"
-"20",1903,6.6,"Scotland"
-"21",1904,6.81,"Scotland"
-"22",1905,7.19,"Scotland"
-"23",1906,7,"Scotland"
-"24",1907,6.62,"Scotland"
-"25",1908,7.28,"Scotland"
-"26",1909,6.32,"Scotland"
-"27",1910,6.79,"Scotland"
-"28",1911,7.38,"Scotland"
-"29",1912,6.78,"Scotland"
-"30",1913,7.24,"Scotland"
-"31",1914,7.35,"Scotland"
-"32",1915,6.46,"Scotland"
-"33",1916,6.89,"Scotland"
-"34",1917,6.37,"Scotland"
-"35",1918,6.91,"Scotland"
-"36",1919,6.15,"Scotland"
-"37",1920,7.18,"Scotland"
-"38",1921,7.68,"Scotland"
-"39",1922,6.38,"Scotland"
-"40",1923,6.61,"Scotland"
-"41",1924,6.96,"Scotland"
-"42",1925,6.85,"Scotland"
-"43",1926,7.27,"Scotland"
-"44",1927,6.72,"Scotland"
-"45",1928,6.9,"Scotland"
-"46",1929,6.74,"Scotland"
-"47",1930,6.92,"Scotland"
-"48",1931,6.86,"Scotland"
-"49",1932,7.22,"Scotland"
-"50",1933,7.77,"Scotland"
-"51",1934,7.66,"Scotland"
-"52",1935,7.11,"Scotland"
-"53",1936,7.1,"Scotland"
-"54",1937,6.95,"Scotland"
-"55",1938,7.68,"Scotland"
-"56",1939,7.36,"Scotland"
-"57",1940,6.83,"Scotland"
-"58",1941,6.68,"Scotland"
-"59",1942,6.78,"Scotland"
-"60",1943,7.54,"Scotland"
-"61",1944,7.17,"Scotland"
-"62",1945,7.89,"Scotland"
-"63",1946,7.14,"Scotland"
-"64",1947,6.96,"Scotland"
-"65",1948,7.46,"Scotland"
-"66",1949,7.91,"Scotland"
-"67",1950,6.92,"Scotland"
-"68",1951,6.72,"Scotland"
-"69",1952,6.57,"Scotland"
-"70",1953,7.89,"Scotland"
-"71",1954,6.83,"Scotland"
-"72",1955,6.98,"Scotland"
-"73",1956,6.84,"Scotland"
-"74",1957,7.46,"Scotland"
-"75",1958,6.88,"Scotland"
-"76",1959,7.86,"Scotland"
-"77",1960,7.24,"Scotland"
-"78",1961,7.21,"Scotland"
-"79",1962,6.52,"Scotland"
-"80",1963,6.37,"Scotland"
-"81",1964,7.13,"Scotland"
-"82",1965,6.42,"Scotland"
-"83",1966,6.68,"Scotland"
-"84",1967,7.18,"Scotland"
-"85",1968,6.79,"Scotland"
-"86",1969,6.81,"Scotland"
-"87",1970,6.87,"Scotland"
-"88",1971,7.63,"Scotland"
-"89",1972,6.93,"Scotland"
-"90",1973,7.05,"Scotland"
-"91",1974,7.17,"Scotland"
-"92",1975,7.48,"Scotland"
-"93",1976,7.43,"Scotland"
-"94",1977,6.92,"Scotland"
-"95",1978,6.95,"Scotland"
-"96",1979,6.18,"Scotland"
-"97",1980,7.05,"Scotland"
-"98",1981,6.73,"Scotland"
-"99",1982,7.27,"Scotland"
-"100",1983,7.41,"Scotland"
-"101",1984,7.3,"Scotland"
-"102",1985,6.44,"Scotland"
-"103",1986,6.42,"Scotland"
-"104",1987,6.65,"Scotland"
-"105",1988,7.49,"Scotland"
-"106",1989,7.58,"Scotland"
-"107",1990,7.79,"Scotland"
-"108",1991,7.37,"Scotland"
-"109",1992,7.28,"Scotland"
-"110",1993,6.87,"Scotland"
-"111",1994,7.22,"Scotland"
-"112",1995,7.51,"Scotland"
-"113",1996,7.03,"Scotland"
-"114",1997,8.09,"Scotland"
-"115",1998,7.67,"Scotland"
-"116",1999,7.8,"Scotland"
-"117",2000,7.67,"Scotland"
-"118",2001,7.32,"Scotland"
-"119",2002,7.98,"Scotland"
-"120",2003,8.18,"Scotland"
-"121",2004,8.1,"Scotland"
-"122",2005,8.06,"Scotland"
-"123",2006,8.2,"Scotland"
-"124",2007,8.16,"Scotland"
-"125",2008,7.64,"Scotland"
-"126",2009,7.81,"Scotland"
-"127",2010,6.52,"Scotland"
-"128",2011,8.02,"Scotland"
-"129",2012,7.29,"Scotland"
-"130",2013,7.49,"Scotland"
-"131",2014,8.43,"Scotland"
-"132",2015,7.56,"Scotland"
-"133",2016,7.8,"Scotland"
-"134",2017,8.01,"Scotland"
-"135",2018,7.77,"Scotland"
-"136",2019,7.93,"Scotland"
-"137",2020,8.02,"Scotland"
-"138",2021,7.84,"Scotland"
-"139",2022,8.5,"Scotland"
-"140",2023,8.29,"Scotland"
-"141",1884,9.26,"England"
-"142",1885,8.11,"England"
-"143",1886,8.25,"England"
-"144",1887,7.97,"England"
-"145",1888,7.82,"England"
-"146",1889,8.5,"England"
-"147",1890,8.45,"England"
-"148",1891,8.1,"England"
-"149",1892,7.68,"England"
-"150",1893,9.44,"England"
-"151",1894,8.82,"England"
-"152",1895,8.28,"England"
-"153",1896,8.89,"England"
-"154",1897,8.97,"England"
-"155",1898,9.58,"England"
-"156",1899,9.31,"England"
-"157",1900,9.09,"England"
-"158",1901,8.66,"England"
-"159",1902,8.4,"England"
-"160",1903,8.79,"England"
-"161",1904,8.64,"England"
-"162",1905,8.72,"England"
-"163",1906,9.02,"England"
-"164",1907,8.51,"England"
-"165",1908,8.86,"England"
-"166",1909,8.17,"England"
-"167",1910,8.8,"England"
-"168",1911,9.63,"England"
-"169",1912,8.95,"England"
-"170",1913,9.35,"England"
-"171",1914,9.45,"England"
-"172",1915,8.54,"England"
-"173",1916,8.77,"England"
-"174",1917,8.14,"England"
-"175",1918,9.09,"England"
-"176",1919,8.1,"England"
-"177",1920,9.15,"England"
-"178",1921,10.08,"England"
-"179",1922,8.29,"England"
-"180",1923,8.68,"England"
-"181",1924,8.86,"England"
-"182",1925,8.81,"England"
-"183",1926,9.29,"England"
-"184",1927,8.77,"England"
-"185",1928,9.14,"England"
-"186",1929,8.63,"England"
-"187",1930,9.07,"England"
-"188",1931,8.58,"England"
-"189",1932,8.97,"England"
-"190",1933,9.44,"England"
-"191",1934,9.57,"England"
-"192",1935,9.32,"England"
-"193",1936,8.89,"England"
-"194",1937,9.11,"England"
-"195",1938,9.63,"England"
-"196",1939,9.22,"England"
-"197",1940,8.61,"England"
-"198",1941,8.62,"England"
-"199",1942,8.66,"England"
-"200",1943,9.6,"England"
-"201",1944,9.1,"England"
-"202",1945,9.82,"England"
-"203",1946,9.02,"England"
-"204",1947,9.17,"England"
-"205",1948,9.54,"England"
-"206",1949,10.11,"England"
-"207",1950,9.06,"England"
-"208",1951,8.87,"England"
-"209",1952,8.75,"England"
-"210",1953,9.45,"England"
-"211",1954,8.81,"England"
-"212",1955,8.87,"England"
-"213",1956,8.43,"England"
-"214",1957,9.58,"England"
-"215",1958,8.97,"England"
-"216",1959,10,"England"
-"217",1960,9.26,"England"
-"218",1961,9.5,"England"
-"219",1962,8.11,"England"
-"220",1963,7.96,"England"
-"221",1964,8.95,"England"
-"222",1965,8.49,"England"
-"223",1966,9,"England"
-"224",1967,9.21,"England"
-"225",1968,8.89,"England"
-"226",1969,8.86,"England"
-"227",1970,9.11,"England"
-"228",1971,9.31,"England"
-"229",1972,8.78,"England"
-"230",1973,9.18,"England"
-"231",1974,9.07,"England"
-"232",1975,9.47,"England"
-"233",1976,9.5,"England"
-"234",1977,9.01,"England"
-"235",1978,8.91,"England"
-"236",1979,8.4,"England"
-"237",1980,8.92,"England"
-"238",1981,8.85,"England"
-"239",1982,9.44,"England"
-"240",1983,9.6,"England"
-"241",1984,9.28,"England"
-"242",1985,8.53,"England"
-"243",1986,8.4,"England"
-"244",1987,8.73,"England"
-"245",1988,9.42,"England"
-"246",1989,10.17,"England"
-"247",1990,10.29,"England"
-"248",1991,9.2,"England"
-"249",1992,9.49,"England"
-"250",1993,9.13,"England"
-"251",1994,9.84,"England"
-"252",1995,10.07,"England"
-"253",1996,8.81,"England"
-"254",1997,10.14,"England"
-"255",1998,9.97,"England"
-"256",1999,10.26,"England"
-"257",2000,9.92,"England"
-"258",2001,9.63,"England"
-"259",2002,10.28,"England"
-"260",2003,10.23,"England"
-"261",2004,10.21,"England"
-"262",2005,10.16,"England"
-"263",2006,10.57,"England"
-"264",2007,10.33,"England"
-"265",2008,9.8,"England"
-"266",2009,9.92,"England"
-"267",2010,8.76,"England"
-"268",2011,10.54,"England"
-"269",2012,9.53,"England"
-"270",2013,9.43,"England"
-"271",2014,10.75,"England"
-"272",2015,10.15,"England"
-"273",2016,10.12,"England"
-"274",2017,10.39,"England"
-"275",2018,10.43,"England"
-"276",2019,10.22,"England"
-"277",2020,10.56,"England"
-"278",2021,10.06,"England"
-"279",2022,10.93,"England"
-"280",2023,10.89,"England"
-"281",1884,8.71,"Wales"
-"282",1885,7.57,"Wales"
-"283",1886,7.86,"Wales"
-"284",1887,7.52,"Wales"
-"285",1888,7.52,"Wales"
-"286",1889,8.16,"Wales"
-"287",1890,8.08,"Wales"
-"288",1891,7.91,"Wales"
-"289",1892,7.46,"Wales"
-"290",1893,9.34,"Wales"
-"291",1894,8.55,"Wales"
-"292",1895,7.74,"Wales"
-"293",1896,8.5,"Wales"
-"294",1897,8.72,"Wales"
-"295",1898,9.16,"Wales"
-"296",1899,9.05,"Wales"
-"297",1900,8.53,"Wales"
-"298",1901,8.27,"Wales"
-"299",1902,8.03,"Wales"
-"300",1903,8.33,"Wales"
-"301",1904,8.22,"Wales"
-"302",1905,8.32,"Wales"
-"303",1906,8.5,"Wales"
-"304",1907,8.15,"Wales"
-"305",1908,8.66,"Wales"
-"306",1909,7.92,"Wales"
-"307",1910,8.51,"Wales"
-"308",1911,9.24,"Wales"
-"309",1912,8.6,"Wales"
-"310",1913,9.07,"Wales"
-"311",1914,9.09,"Wales"
-"312",1915,8.28,"Wales"
-"313",1916,8.42,"Wales"
-"314",1917,7.77,"Wales"
-"315",1918,8.82,"Wales"
-"316",1919,7.78,"Wales"
-"317",1920,8.81,"Wales"
-"318",1921,9.7,"Wales"
-"319",1922,7.96,"Wales"
-"320",1923,8.43,"Wales"
-"321",1924,8.49,"Wales"
-"322",1925,8.45,"Wales"
-"323",1926,8.94,"Wales"
-"324",1927,8.48,"Wales"
-"325",1928,8.8,"Wales"
-"326",1929,8.27,"Wales"
-"327",1930,8.6,"Wales"
-"328",1931,8.28,"Wales"
-"329",1932,8.6,"Wales"
-"330",1933,8.86,"Wales"
-"331",1934,9.07,"Wales"
-"332",1935,8.85,"Wales"
-"333",1936,8.59,"Wales"
-"334",1937,8.71,"Wales"
-"335",1938,9.15,"Wales"
-"336",1939,8.86,"Wales"
-"337",1940,8.4,"Wales"
-"338",1941,8.36,"Wales"
-"339",1942,8.54,"Wales"
-"340",1943,9.17,"Wales"
-"341",1944,8.82,"Wales"
-"342",1945,9.31,"Wales"
-"343",1946,8.55,"Wales"
-"344",1947,8.57,"Wales"
-"345",1948,9.14,"Wales"
-"346",1949,9.78,"Wales"
-"347",1950,8.61,"Wales"
-"348",1951,8.47,"Wales"
-"349",1952,8.38,"Wales"
-"350",1953,9.12,"Wales"
-"351",1954,8.49,"Wales"
-"352",1955,8.63,"Wales"
-"353",1956,8.23,"Wales"
-"354",1957,9.3,"Wales"
-"355",1958,8.66,"Wales"
-"356",1959,9.64,"Wales"
-"357",1960,8.8,"Wales"
-"358",1961,8.96,"Wales"
-"359",1962,7.79,"Wales"
-"360",1963,7.58,"Wales"
-"361",1964,8.57,"Wales"
-"362",1965,8.1,"Wales"
-"363",1966,8.62,"Wales"
-"364",1967,8.71,"Wales"
-"365",1968,8.51,"Wales"
-"366",1969,8.4,"Wales"
-"367",1970,8.69,"Wales"
-"368",1971,9.04,"Wales"
-"369",1972,8.27,"Wales"
-"370",1973,8.82,"Wales"
-"371",1974,8.56,"Wales"
-"372",1975,9.09,"Wales"
-"373",1976,8.9,"Wales"
-"374",1977,8.65,"Wales"
-"375",1978,8.55,"Wales"
-"376",1979,7.86,"Wales"
-"377",1980,8.52,"Wales"
-"378",1981,8.44,"Wales"
-"379",1982,8.96,"Wales"
-"380",1983,9.17,"Wales"
-"381",1984,8.94,"Wales"
-"382",1985,8.08,"Wales"
-"383",1986,7.89,"Wales"
-"384",1987,8.28,"Wales"
-"385",1988,8.99,"Wales"
-"386",1989,9.58,"Wales"
-"387",1990,9.75,"Wales"
-"388",1991,8.7,"Wales"
-"389",1992,8.98,"Wales"
-"390",1993,8.64,"Wales"
-"391",1994,9.27,"Wales"
-"392",1995,9.67,"Wales"
-"393",1996,8.37,"Wales"
-"394",1997,9.69,"Wales"
-"395",1998,9.53,"Wales"
-"396",1999,9.75,"Wales"
-"397",2000,9.36,"Wales"
-"398",2001,9.08,"Wales"
-"399",2002,9.63,"Wales"
-"400",2003,9.61,"Wales"
-"401",2004,9.66,"Wales"
-"402",2005,9.7,"Wales"
-"403",2006,9.94,"Wales"
-"404",2007,9.85,"Wales"
-"405",2008,9.29,"Wales"
-"406",2009,9.28,"Wales"
-"407",2010,8.12,"Wales"
-"408",2011,9.89,"Wales"
-"409",2012,9.08,"Wales"
-"410",2013,8.98,"Wales"
-"411",2014,10.09,"Wales"
-"412",2015,9.47,"Wales"
-"413",2016,9.62,"Wales"
-"414",2017,9.88,"Wales"
-"415",2018,9.71,"Wales"
-"416",2019,9.67,"Wales"
-"417",2020,9.92,"Wales"
-"418",2021,9.63,"Wales"
-"419",2022,10.23,"Wales"
-"420",2023,10.4,"Wales"
-"421",1884,8.7,"Northern Ireland"
-"422",1885,7.81,"Northern Ireland"
-"423",1886,7.79,"Northern Ireland"
-"424",1887,8.32,"Northern Ireland"
-"425",1888,8,"Northern Ireland"
-"426",1889,8.67,"Northern Ireland"
-"427",1890,8.69,"Northern Ireland"
-"428",1891,8.28,"Northern Ireland"
-"429",1892,7.47,"Northern Ireland"
-"430",1893,9.3,"Northern Ireland"
-"431",1894,8.5,"Northern Ireland"
-"432",1895,7.85,"Northern Ireland"
-"433",1896,8.62,"Northern Ireland"
-"434",1897,8.53,"Northern Ireland"
-"435",1898,9.23,"Northern Ireland"
-"436",1899,8.96,"Northern Ireland"
-"437",1900,8.4,"Northern Ireland"
-"438",1901,8.28,"Northern Ireland"
-"439",1902,8.09,"Northern Ireland"
-"440",1903,8.18,"Northern Ireland"
-"441",1904,8.16,"Northern Ireland"
-"442",1905,8.49,"Northern Ireland"
-"443",1906,8.31,"Northern Ireland"
-"444",1907,7.78,"Northern Ireland"
-"445",1908,8.4,"Northern Ireland"
-"446",1909,7.6,"Northern Ireland"
-"447",1910,8.07,"Northern Ireland"
-"448",1911,8.51,"Northern Ireland"
-"449",1912,8.08,"Northern Ireland"
-"450",1913,8.36,"Northern Ireland"
-"451",1914,8.56,"Northern Ireland"
-"452",1915,7.82,"Northern Ireland"
-"453",1916,8.19,"Northern Ireland"
-"454",1917,7.83,"Northern Ireland"
-"455",1918,8.4,"Northern Ireland"
-"456",1919,7.66,"Northern Ireland"
-"457",1920,8.39,"Northern Ireland"
-"458",1921,9.4,"Northern Ireland"
-"459",1922,7.88,"Northern Ireland"
-"460",1923,8.13,"Northern Ireland"
-"461",1924,8.33,"Northern Ireland"
-"462",1925,8.29,"Northern Ireland"
-"463",1926,8.73,"Northern Ireland"
-"464",1927,8.33,"Northern Ireland"
-"465",1928,8.37,"Northern Ireland"
-"466",1929,8.32,"Northern Ireland"
-"467",1930,8.14,"Northern Ireland"
-"468",1931,8.23,"Northern Ireland"
-"469",1932,8.49,"Northern Ireland"
-"470",1933,8.89,"Northern Ireland"
-"471",1934,8.82,"Northern Ireland"
-"472",1935,8.44,"Northern Ireland"
-"473",1936,8.26,"Northern Ireland"
-"474",1937,8.24,"Northern Ireland"
-"475",1938,8.9,"Northern Ireland"
-"476",1939,8.7,"Northern Ireland"
-"477",1940,8.38,"Northern Ireland"
-"478",1941,8.25,"Northern Ireland"
-"479",1942,8.46,"Northern Ireland"
-"480",1943,9.17,"Northern Ireland"
-"481",1944,8.83,"Northern Ireland"
-"482",1945,9.45,"Northern Ireland"
-"483",1946,8.52,"Northern Ireland"
-"484",1947,8.53,"Northern Ireland"
-"485",1948,8.99,"Northern Ireland"
-"486",1949,9.55,"Northern Ireland"
-"487",1950,8.42,"Northern Ireland"
-"488",1951,8.24,"Northern Ireland"
-"489",1952,8.29,"Northern Ireland"
-"490",1953,9.2,"Northern Ireland"
-"491",1954,8.41,"Northern Ireland"
-"492",1955,8.62,"Northern Ireland"
-"493",1956,8.45,"Northern Ireland"
-"494",1957,8.91,"Northern Ireland"
-"495",1958,8.58,"Northern Ireland"
-"496",1959,9.29,"Northern Ireland"
-"497",1960,8.68,"Northern Ireland"
-"498",1961,8.69,"Northern Ireland"
-"499",1962,7.96,"Northern Ireland"
-"500",1963,7.78,"Northern Ireland"
-"501",1964,8.64,"Northern Ireland"
-"502",1965,7.91,"Northern Ireland"
-"503",1966,8.42,"Northern Ireland"
-"504",1967,8.48,"Northern Ireland"
-"505",1968,8.4,"Northern Ireland"
-"506",1969,8.15,"Northern Ireland"
-"507",1970,8.47,"Northern Ireland"
-"508",1971,8.99,"Northern Ireland"
-"509",1972,8.07,"Northern Ireland"
-"510",1973,8.64,"Northern Ireland"
-"511",1974,8.35,"Northern Ireland"
-"512",1975,8.97,"Northern Ireland"
-"513",1976,8.72,"Northern Ireland"
-"514",1977,8.35,"Northern Ireland"
-"515",1978,8.51,"Northern Ireland"
-"516",1979,7.63,"Northern Ireland"
-"517",1980,8.47,"Northern Ireland"
-"518",1981,8.36,"Northern Ireland"
-"519",1982,8.62,"Northern Ireland"
-"520",1983,9.03,"Northern Ireland"
-"521",1984,8.55,"Northern Ireland"
-"522",1985,7.94,"Northern Ireland"
-"523",1986,7.72,"Northern Ireland"
-"524",1987,8.24,"Northern Ireland"
-"525",1988,8.82,"Northern Ireland"
-"526",1989,9.1,"Northern Ireland"
-"527",1990,9.17,"Northern Ireland"
-"528",1991,8.74,"Northern Ireland"
-"529",1992,8.68,"Northern Ireland"
-"530",1993,8.47,"Northern Ireland"
-"531",1994,8.72,"Northern Ireland"
-"532",1995,9.36,"Northern Ireland"
-"533",1996,8.46,"Northern Ireland"
-"534",1997,9.53,"Northern Ireland"
-"535",1998,9.32,"Northern Ireland"
-"536",1999,9.32,"Northern Ireland"
-"537",2000,9.01,"Northern Ireland"
-"538",2001,8.9,"Northern Ireland"
-"539",2002,9.39,"Northern Ireland"
-"540",2003,9.39,"Northern Ireland"
-"541",2004,9.43,"Northern Ireland"
-"542",2005,9.57,"Northern Ireland"
-"543",2006,9.63,"Northern Ireland"
-"544",2007,9.77,"Northern Ireland"
-"545",2008,9.05,"Northern Ireland"
-"546",2009,9.07,"Northern Ireland"
-"547",2010,7.95,"Northern Ireland"
-"548",2011,9.36,"Northern Ireland"
-"549",2012,8.91,"Northern Ireland"
-"550",2013,8.98,"Northern Ireland"
-"551",2014,9.58,"Northern Ireland"
-"552",2015,8.82,"Northern Ireland"
-"553",2016,9.32,"Northern Ireland"
-"554",2017,9.48,"Northern Ireland"
-"555",2018,9.18,"Northern Ireland"
-"556",2019,9.35,"Northern Ireland"
-"557",2020,9.28,"Northern Ireland"
-"558",2021,9.54,"Northern Ireland"
-"559",2022,9.83,"Northern Ireland"
-"560",2023,10.17,"Northern Ireland"
+year,ann,Country
+1884,7.05,Scotland
+1885,5.96,Scotland
+1886,5.94,Scotland
+1887,6.58,Scotland
+1888,6.18,Scotland
+1889,7.04,Scotland
+1890,6.96,Scotland
+1891,6.55,Scotland
+1892,5.7,Scotland
+1893,7.43,Scotland
+1894,6.96,Scotland
+1895,6.2,Scotland
+1896,7.07,Scotland
+1897,6.8,Scotland
+1898,7.55,Scotland
+1899,7.12,Scotland
+1900,6.84,Scotland
+1901,7.01,Scotland
+1902,6.43,Scotland
+1903,6.6,Scotland
+1904,6.81,Scotland
+1905,7.19,Scotland
+1906,7,Scotland
+1907,6.62,Scotland
+1908,7.28,Scotland
+1909,6.32,Scotland
+1910,6.79,Scotland
+1911,7.38,Scotland
+1912,6.78,Scotland
+1913,7.24,Scotland
+1914,7.35,Scotland
+1915,6.46,Scotland
+1916,6.89,Scotland
+1917,6.37,Scotland
+1918,6.91,Scotland
+1919,6.15,Scotland
+1920,7.18,Scotland
+1921,7.68,Scotland
+1922,6.38,Scotland
+1923,6.61,Scotland
+1924,6.96,Scotland
+1925,6.85,Scotland
+1926,7.27,Scotland
+1927,6.72,Scotland
+1928,6.9,Scotland
+1929,6.74,Scotland
+1930,6.92,Scotland
+1931,6.86,Scotland
+1932,7.22,Scotland
+1933,7.77,Scotland
+1934,7.66,Scotland
+1935,7.11,Scotland
+1936,7.1,Scotland
+1937,6.95,Scotland
+1938,7.68,Scotland
+1939,7.36,Scotland
+1940,6.83,Scotland
+1941,6.68,Scotland
+1942,6.78,Scotland
+1943,7.54,Scotland
+1944,7.17,Scotland
+1945,7.89,Scotland
+1946,7.14,Scotland
+1947,6.96,Scotland
+1948,7.46,Scotland
+1949,7.91,Scotland
+1950,6.92,Scotland
+1951,6.72,Scotland
+1952,6.57,Scotland
+1953,7.89,Scotland
+1954,6.83,Scotland
+1955,6.98,Scotland
+1956,6.84,Scotland
+1957,7.46,Scotland
+1958,6.88,Scotland
+1959,7.86,Scotland
+1960,7.24,Scotland
+1961,7.21,Scotland
+1962,6.52,Scotland
+1963,6.37,Scotland
+1964,7.13,Scotland
+1965,6.42,Scotland
+1966,6.68,Scotland
+1967,7.18,Scotland
+1968,6.79,Scotland
+1969,6.81,Scotland
+1970,6.87,Scotland
+1971,7.63,Scotland
+1972,6.93,Scotland
+1973,7.05,Scotland
+1974,7.17,Scotland
+1975,7.48,Scotland
+1976,7.43,Scotland
+1977,6.92,Scotland
+1978,6.95,Scotland
+1979,6.18,Scotland
+1980,7.05,Scotland
+1981,6.73,Scotland
+1982,7.27,Scotland
+1983,7.41,Scotland
+1984,7.3,Scotland
+1985,6.44,Scotland
+1986,6.42,Scotland
+1987,6.65,Scotland
+1988,7.49,Scotland
+1989,7.58,Scotland
+1990,7.79,Scotland
+1991,7.37,Scotland
+1992,7.28,Scotland
+1993,6.87,Scotland
+1994,7.22,Scotland
+1995,7.51,Scotland
+1996,7.03,Scotland
+1997,8.09,Scotland
+1998,7.67,Scotland
+1999,7.8,Scotland
+2000,7.67,Scotland
+2001,7.32,Scotland
+2002,7.98,Scotland
+2003,8.18,Scotland
+2004,8.1,Scotland
+2005,8.06,Scotland
+2006,8.2,Scotland
+2007,8.16,Scotland
+2008,7.64,Scotland
+2009,7.81,Scotland
+2010,6.52,Scotland
+2011,8.02,Scotland
+2012,7.29,Scotland
+2013,7.49,Scotland
+2014,8.43,Scotland
+2015,7.56,Scotland
+2016,7.8,Scotland
+2017,8.01,Scotland
+2018,7.77,Scotland
+2019,7.93,Scotland
+2020,8.02,Scotland
+2021,7.84,Scotland
+2022,8.5,Scotland
+2023,8.29,Scotland
+1884,9.26,England
+1885,8.11,England
+1886,8.25,England
+1887,7.97,England
+1888,7.82,England
+1889,8.5,England
+1890,8.45,England
+1891,8.1,England
+1892,7.68,England
+1893,9.44,England
+1894,8.82,England
+1895,8.28,England
+1896,8.89,England
+1897,8.97,England
+1898,9.58,England
+1899,9.31,England
+1900,9.09,England
+1901,8.66,England
+1902,8.4,England
+1903,8.79,England
+1904,8.64,England
+1905,8.72,England
+1906,9.02,England
+1907,8.51,England
+1908,8.86,England
+1909,8.17,England
+1910,8.8,England
+1911,9.63,England
+1912,8.95,England
+1913,9.35,England
+1914,9.45,England
+1915,8.54,England
+1916,8.77,England
+1917,8.14,England
+1918,9.09,England
+1919,8.1,England
+1920,9.15,England
+1921,10.08,England
+1922,8.29,England
+1923,8.68,England
+1924,8.86,England
+1925,8.81,England
+1926,9.29,England
+1927,8.77,England
+1928,9.14,England
+1929,8.63,England
+1930,9.07,England
+1931,8.58,England
+1932,8.97,England
+1933,9.44,England
+1934,9.57,England
+1935,9.32,England
+1936,8.89,England
+1937,9.11,England
+1938,9.63,England
+1939,9.22,England
+1940,8.61,England
+1941,8.62,England
+1942,8.66,England
+1943,9.6,England
+1944,9.1,England
+1945,9.82,England
+1946,9.02,England
+1947,9.17,England
+1948,9.54,England
+1949,10.11,England
+1950,9.06,England
+1951,8.87,England
+1952,8.75,England
+1953,9.45,England
+1954,8.81,England
+1955,8.87,England
+1956,8.43,England
+1957,9.58,England
+1958,8.97,England
+1959,10,England
+1960,9.26,England
+1961,9.5,England
+1962,8.11,England
+1963,7.96,England
+1964,8.95,England
+1965,8.49,England
+1966,9,England
+1967,9.21,England
+1968,8.89,England
+1969,8.86,England
+1970,9.11,England
+1971,9.31,England
+1972,8.78,England
+1973,9.18,England
+1974,9.07,England
+1975,9.47,England
+1976,9.5,England
+1977,9.01,England
+1978,8.91,England
+1979,8.4,England
+1980,8.92,England
+1981,8.85,England
+1982,9.44,England
+1983,9.6,England
+1984,9.28,England
+1985,8.53,England
+1986,8.4,England
+1987,8.73,England
+1988,9.42,England
+1989,10.17,England
+1990,10.29,England
+1991,9.2,England
+1992,9.49,England
+1993,9.13,England
+1994,9.84,England
+1995,10.07,England
+1996,8.81,England
+1997,10.14,England
+1998,9.97,England
+1999,10.26,England
+2000,9.92,England
+2001,9.63,England
+2002,10.28,England
+2003,10.23,England
+2004,10.21,England
+2005,10.16,England
+2006,10.57,England
+2007,10.33,England
+2008,9.8,England
+2009,9.92,England
+2010,8.76,England
+2011,10.54,England
+2012,9.53,England
+2013,9.43,England
+2014,10.75,England
+2015,10.15,England
+2016,10.12,England
+2017,10.39,England
+2018,10.43,England
+2019,10.22,England
+2020,10.56,England
+2021,10.06,England
+2022,10.93,England
+2023,10.89,England
+1884,8.71,Wales
+1885,7.57,Wales
+1886,7.86,Wales
+1887,7.52,Wales
+1888,7.52,Wales
+1889,8.16,Wales
+1890,8.08,Wales
+1891,7.91,Wales
+1892,7.46,Wales
+1893,9.34,Wales
+1894,8.55,Wales
+1895,7.74,Wales
+1896,8.5,Wales
+1897,8.72,Wales
+1898,9.16,Wales
+1899,9.05,Wales
+1900,8.53,Wales
+1901,8.27,Wales
+1902,8.03,Wales
+1903,8.33,Wales
+1904,8.22,Wales
+1905,8.32,Wales
+1906,8.5,Wales
+1907,8.15,Wales
+1908,8.66,Wales
+1909,7.92,Wales
+1910,8.51,Wales
+1911,9.24,Wales
+1912,8.6,Wales
+1913,9.07,Wales
+1914,9.09,Wales
+1915,8.28,Wales
+1916,8.42,Wales
+1917,7.77,Wales
+1918,8.82,Wales
+1919,7.78,Wales
+1920,8.81,Wales
+1921,9.7,Wales
+1922,7.96,Wales
+1923,8.43,Wales
+1924,8.49,Wales
+1925,8.45,Wales
+1926,8.94,Wales
+1927,8.48,Wales
+1928,8.8,Wales
+1929,8.27,Wales
+1930,8.6,Wales
+1931,8.28,Wales
+1932,8.6,Wales
+1933,8.86,Wales
+1934,9.07,Wales
+1935,8.85,Wales
+1936,8.59,Wales
+1937,8.71,Wales
+1938,9.15,Wales
+1939,8.86,Wales
+1940,8.4,Wales
+1941,8.36,Wales
+1942,8.54,Wales
+1943,9.17,Wales
+1944,8.82,Wales
+1945,9.31,Wales
+1946,8.55,Wales
+1947,8.57,Wales
+1948,9.14,Wales
+1949,9.78,Wales
+1950,8.61,Wales
+1951,8.47,Wales
+1952,8.38,Wales
+1953,9.12,Wales
+1954,8.49,Wales
+1955,8.63,Wales
+1956,8.23,Wales
+1957,9.3,Wales
+1958,8.66,Wales
+1959,9.64,Wales
+1960,8.8,Wales
+1961,8.96,Wales
+1962,7.79,Wales
+1963,7.58,Wales
+1964,8.57,Wales
+1965,8.1,Wales
+1966,8.62,Wales
+1967,8.71,Wales
+1968,8.51,Wales
+1969,8.4,Wales
+1970,8.69,Wales
+1971,9.04,Wales
+1972,8.27,Wales
+1973,8.82,Wales
+1974,8.56,Wales
+1975,9.09,Wales
+1976,8.9,Wales
+1977,8.65,Wales
+1978,8.55,Wales
+1979,7.86,Wales
+1980,8.52,Wales
+1981,8.44,Wales
+1982,8.96,Wales
+1983,9.17,Wales
+1984,8.94,Wales
+1985,8.08,Wales
+1986,7.89,Wales
+1987,8.28,Wales
+1988,8.99,Wales
+1989,9.58,Wales
+1990,9.75,Wales
+1991,8.7,Wales
+1992,8.98,Wales
+1993,8.64,Wales
+1994,9.27,Wales
+1995,9.67,Wales
+1996,8.37,Wales
+1997,9.69,Wales
+1998,9.53,Wales
+1999,9.75,Wales
+2000,9.36,Wales
+2001,9.08,Wales
+2002,9.63,Wales
+2003,9.61,Wales
+2004,9.66,Wales
+2005,9.7,Wales
+2006,9.94,Wales
+2007,9.85,Wales
+2008,9.29,Wales
+2009,9.28,Wales
+2010,8.12,Wales
+2011,9.89,Wales
+2012,9.08,Wales
+2013,8.98,Wales
+2014,10.09,Wales
+2015,9.47,Wales
+2016,9.62,Wales
+2017,9.88,Wales
+2018,9.71,Wales
+2019,9.67,Wales
+2020,9.92,Wales
+2021,9.63,Wales
+2022,10.23,Wales
+2023,10.4,Wales
+1884,8.7,Northern Ireland
+1885,7.81,Northern Ireland
+1886,7.79,Northern Ireland
+1887,8.32,Northern Ireland
+1888,8,Northern Ireland
+1889,8.67,Northern Ireland
+1890,8.69,Northern Ireland
+1891,8.28,Northern Ireland
+1892,7.47,Northern Ireland
+1893,9.3,Northern Ireland
+1894,8.5,Northern Ireland
+1895,7.85,Northern Ireland
+1896,8.62,Northern Ireland
+1897,8.53,Northern Ireland
+1898,9.23,Northern Ireland
+1899,8.96,Northern Ireland
+1900,8.4,Northern Ireland
+1901,8.28,Northern Ireland
+1902,8.09,Northern Ireland
+1903,8.18,Northern Ireland
+1904,8.16,Northern Ireland
+1905,8.49,Northern Ireland
+1906,8.31,Northern Ireland
+1907,7.78,Northern Ireland
+1908,8.4,Northern Ireland
+1909,7.6,Northern Ireland
+1910,8.07,Northern Ireland
+1911,8.51,Northern Ireland
+1912,8.08,Northern Ireland
+1913,8.36,Northern Ireland
+1914,8.56,Northern Ireland
+1915,7.82,Northern Ireland
+1916,8.19,Northern Ireland
+1917,7.83,Northern Ireland
+1918,8.4,Northern Ireland
+1919,7.66,Northern Ireland
+1920,8.39,Northern Ireland
+1921,9.4,Northern Ireland
+1922,7.88,Northern Ireland
+1923,8.13,Northern Ireland
+1924,8.33,Northern Ireland
+1925,8.29,Northern Ireland
+1926,8.73,Northern Ireland
+1927,8.33,Northern Ireland
+1928,8.37,Northern Ireland
+1929,8.32,Northern Ireland
+1930,8.14,Northern Ireland
+1931,8.23,Northern Ireland
+1932,8.49,Northern Ireland
+1933,8.89,Northern Ireland
+1934,8.82,Northern Ireland
+1935,8.44,Northern Ireland
+1936,8.26,Northern Ireland
+1937,8.24,Northern Ireland
+1938,8.9,Northern Ireland
+1939,8.7,Northern Ireland
+1940,8.38,Northern Ireland
+1941,8.25,Northern Ireland
+1942,8.46,Northern Ireland
+1943,9.17,Northern Ireland
+1944,8.83,Northern Ireland
+1945,9.45,Northern Ireland
+1946,8.52,Northern Ireland
+1947,8.53,Northern Ireland
+1948,8.99,Northern Ireland
+1949,9.55,Northern Ireland
+1950,8.42,Northern Ireland
+1951,8.24,Northern Ireland
+1952,8.29,Northern Ireland
+1953,9.2,Northern Ireland
+1954,8.41,Northern Ireland
+1955,8.62,Northern Ireland
+1956,8.45,Northern Ireland
+1957,8.91,Northern Ireland
+1958,8.58,Northern Ireland
+1959,9.29,Northern Ireland
+1960,8.68,Northern Ireland
+1961,8.69,Northern Ireland
+1962,7.96,Northern Ireland
+1963,7.78,Northern Ireland
+1964,8.64,Northern Ireland
+1965,7.91,Northern Ireland
+1966,8.42,Northern Ireland
+1967,8.48,Northern Ireland
+1968,8.4,Northern Ireland
+1969,8.15,Northern Ireland
+1970,8.47,Northern Ireland
+1971,8.99,Northern Ireland
+1972,8.07,Northern Ireland
+1973,8.64,Northern Ireland
+1974,8.35,Northern Ireland
+1975,8.97,Northern Ireland
+1976,8.72,Northern Ireland
+1977,8.35,Northern Ireland
+1978,8.51,Northern Ireland
+1979,7.63,Northern Ireland
+1980,8.47,Northern Ireland
+1981,8.36,Northern Ireland
+1982,8.62,Northern Ireland
+1983,9.03,Northern Ireland
+1984,8.55,Northern Ireland
+1985,7.94,Northern Ireland
+1986,7.72,Northern Ireland
+1987,8.24,Northern Ireland
+1988,8.82,Northern Ireland
+1989,9.1,Northern Ireland
+1990,9.17,Northern Ireland
+1991,8.74,Northern Ireland
+1992,8.68,Northern Ireland
+1993,8.47,Northern Ireland
+1994,8.72,Northern Ireland
+1995,9.36,Northern Ireland
+1996,8.46,Northern Ireland
+1997,9.53,Northern Ireland
+1998,9.32,Northern Ireland
+1999,9.32,Northern Ireland
+2000,9.01,Northern Ireland
+2001,8.9,Northern Ireland
+2002,9.39,Northern Ireland
+2003,9.39,Northern Ireland
+2004,9.43,Northern Ireland
+2005,9.57,Northern Ireland
+2006,9.63,Northern Ireland
+2007,9.77,Northern Ireland
+2008,9.05,Northern Ireland
+2009,9.07,Northern Ireland
+2010,7.95,Northern Ireland
+2011,9.36,Northern Ireland
+2012,8.91,Northern Ireland
+2013,8.98,Northern Ireland
+2014,9.58,Northern Ireland
+2015,8.82,Northern Ireland
+2016,9.32,Northern Ireland
+2017,9.48,Northern Ireland
+2018,9.18,Northern Ireland
+2019,9.35,Northern Ireland
+2020,9.28,Northern Ireland
+2021,9.54,Northern Ireland
+2022,9.83,Northern Ireland
+2023,10.17,Northern Ireland
