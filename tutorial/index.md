@@ -303,17 +303,46 @@ axis.line = element_line(colour = 'black')  # adds axes lines
 OUTPUT
 
 
+
+
 <img width = '500' height = '400' src = 'https://github.com/user-attachments/assets/28aaed4c-f308-4043-afcc-de1ea68cfb0b'/>
 
 <div style="background-color: 'red' ; padding: 10px; border-radius: 5px;">
 NOTE: notice how our x- axis for year is from -1, 0 and 1. This is because we scaled our data. We can still see the detailed trends over time though from this graph, but we need to know the time frame that this is from (1884-2023)!
+
+
+## Step 5 - Error - Root Mean Square Error
+
+When modelling, it is often useful to find an error value to take into account the uncertainties with the model. For a k NN regression, a RMSE (root mean square value) is often appropriate. The RMSE essential shows the prediction error of the model. A lower RMSE indicated that the model has high predictive accuracy. Altering the `k` value we assigned as 5 earlier is a way to lower the RMSE. (For more info on RMSE follow this link ! - https://www.sciencedirect.com/topics/engineering/root-mean-square-error)
+
+<img width = '600' height = '300' src = 'https://github.com/user-attachments/assets/518b328b-4b8d-489c-ba4f-c1cf06f57b4e' />
+
+
+
 </div>
+
+```r
+rmse <- sqrt(mean((combined_data$ann - combined_data$Predicted)^2, na.rm = TRUE))  # formula to calculate RMSE
+
+print(paste('RMSE', rmse))  # prints the RMSE value in the console
+
+```
+OUTPUT
+
+```r
+"RMSE 0.502558000113679"
+```
+
+This tells us that for each prediction made by the model, it is inaccurate by on average 0.5 °C from the true (observed values). 0.5°C is a fairly good RMSE especially as we are only taking into account 2 varaibles (`year` and `ann`).
+Taking into account seasonal changes for example, may increase the accuracy of our models predictions, but for simplicity we will leave the model as is!
 
 # 2.2 Making projections from k NN regression
 
- k NN regression can also be useful for making projections of data that are more detailed than a linear regression.
+k NN regression can also be useful for making projections like linear models ! We wil use the same example of UK annual mean temperatures to compare the projections made by k NN regression compared to linear regression.
 
 ## Step 1
+
+
 
 ```r
 # Define countries and their numeric value
