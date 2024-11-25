@@ -122,7 +122,7 @@ temp_predict$Predicted <- predict(annual_lm, newdata = temp_predict, type = 'res
 Now we have a new dataframe called temp_predict with the model predictions as an extra column. We can then use this to visualise the model against observed data:
 ```r
 
-(predict_plot <- (ggplot(temp_predict, aes(x= year, y = ann, colour = Country))+
+(lmpredict_plot <- (ggplot(temp_predict, aes(x= year, y = ann, colour = Country))+
   geom_line(aes(y= ann, colour = Country), size =1, linetype = 'solid')+
   geom_line(aes(y= Predicted, colour = Country), size = 1, linetype = 'dashed')+
   labs(title = 'Predicted vs Actual Temperatures', x = 'Actual', y ='Predicted')))
@@ -166,19 +166,19 @@ future_data$upper_ci <- predictions_with_ci[, "upr"]  # add column for upper ci
 Now we can plot our future predictions!
 
 ```r
-linear_future_predict <- ggplot(future_data, aes(x = year, y = predicted_ann, color = Country)) +  
+(linear_future_predict <- ggplot(future_data, aes(x = year, y = predicted_ann, color = Country)) +  
   geom_line() +
   geom_point() +
   geom_ribbon(aes(ymin = lower_ci, ymax = upper_ci, fill = Country), alpha = 0.2) +
-  labs(title = "Projections of Annual Mean Temperature by Country",
+  labs(title = "Future Temperature Predictions (Linear Regression)",
        x = "Year",
-       y = "Predicted Annual Mean Temperature °C"
+       y = "Predicted Mean Temperature °C"
   theme_minimal()+
   theme(
     panel.grid.major = element_blank(),  # Removes major gridlines
     panel.grid.minor = element_blank(),  # Removes minor gridlines
     axis.line = element_line(color = "black", size = 0.5)  # Adds axes lines
-  )
+  )))
 ```
 
 <img width = '500' height = '400' src= 'https://github.com/user-attachments/assets/c0e4b8a8-f107-4847-b824-70ffa0c81ef5' />
@@ -389,14 +389,16 @@ future_data$Country <- factor(future_data$Country, levels = countries)  # Ensure
 
 
 
-(predict_plot <- ggplot(future_data, aes(x = year, y = Predicted_ann, colour = Country)) +
+(future_predict_plot <- ggplot(future_data, aes(x = year, y = Predicted_ann, colour = Country)) +
   geom_line(size = 1) +
-  labs(title = 'Future Temperature Predictions (k-NN)', x = 'Year', y = 'Predicted Temperature') +
+  labs(title = 'Future Temperature Predictions (k-NN)',
+ x = 'Year',
+ y = 'Predicted Mean Temperature °C') +
   theme_minimal() +
   theme(
     panel.grid = element_blank(),
     axis.line = element_line(colour ='black')
-  ))
+  )))
 
 print(future_data)  # we can also see the predictions made in the console
 ```
@@ -405,11 +407,20 @@ OUTPUT
 <img width = '500' height = '400' src = 'https://github.com/user-attachments/assets/08094337-3eca-4e5a-8fc9-1205b0e569d4' />
 
 
-So, we can see that this has slightly more variation compared to the linear regression. We should 
+So, we can see that this has slightly more variation compared to the linear regression. We can plot them side to side to compare the outputs.
+
+```r
+panel_plot <- future_predict_plot + linear_future_predict
+print(panel_plot)
+
+```
+
+OUTPUT
+<img width = '600' height = '400' src = 'https://github.com/user-attachments/assets/2d2f9dca-3c69-44d1-bef2-dafe6fb68726' />
 
 
-<img align = 'left' width = '350' height = '400' src = 'https://github.com/user-attachments/assets/84555dd6-675d-45d1-8925-b147d5c6a9fc' />
-<img align = 'right' width = '350' height = '400' src= 'https://github.com/user-attachments/assets/4793ebe4-7ab6-4cc7-bbde-551f606317eb' />
+
+
 
 
 
@@ -421,22 +432,6 @@ So, we can see that this has slightly more variation compared to the linear regr
 
 
 ---------------------------
-## 3. The third section
-
-More text, code and images.
-
-This is the end of the tutorial. Summarise what the student has learned, possibly even with a list of learning outcomes. In this tutorial we learned:
-
-##### - how to generate fake bivariate data
-##### - how to create a scatterplot in ggplot2
-##### - some of the different plot methods in ggplot2
-
-We can also provide some useful links, include a contact form and a way to send feedback.
-
-For more on `ggplot2`, read the official <a href="https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf" target="_blank">ggplot2 cheatsheet</a>.
-
-Everything below this is footer material - text and links that appears at the end of all of your tutorials.
-
 
 
 
