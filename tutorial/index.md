@@ -1,6 +1,6 @@
-Machine Learning Using Continuous Data (Potential title - linear regression vs k NN)
+# Making Data Projections Using Models (Potential title - linear regression vs k NN)
 ---------------------------
-We will begin with a recap on linear modelling and then continue onto how we can delve deeper into our data and see how it may change in the future ! We will also introduce `knn.reg` and `arima` to make projections, using algorithms from observed data. This is a continuation from the Machine Learning in R Turorial (see here- https://ourcodingclub.github.io/tutorials/machine-learning/) except we will look at continuous data rather than categorical.
+We will begin with a recap on linear modelling and then continue onto how we can delve deeper into how we can use modelling for future predictions! We will also introduce `knn.reg` and `arima` to make projections, using algorithms from observed data. This is a continuation from the Machine Learning in R Turorial (see here- https://ourcodingclub.github.io/tutorials/machine-learning/) except we will look at continuous data rather than categorical.
 
 <img align='left' width = '200' height = '150' src='https://github.com/user-attachments/assets/d4a2ae9c-e45c-4988-a839-c9f48980333f' />
 
@@ -23,7 +23,7 @@ We will begin with a recap on linear modelling and then continue onto how we can
 
 Often when analysing data in ecology and environmental science we use modelling to determine the effect explanatory variables have on response variables such as linear regression and generalised linear models. For example, we can determine the extent to which climate change impacts temperatures or precipitation rates in different areas by looking at observed data over time. 
 
-But what if we want to see how this will change in the future? Machine learning can be a useful tool to make projections on future climate trends. In this tutorial we will look at the potentail for linear regression, k NN regression and ARIMA, to project continuous data using algorithms, with the example of annual temperatures across the UK. We will then look at other ways projections can be made using machine learning such as ARIMA models.
+But what if we want to see how this will change in the future? We can use linear regression, but what if we want more detailed projections? Or our data is not normally distruibuted? Machine learning can be a useful tool for this and  we will look at the potentail for k NN regression and ARIMA, to project continuous data using algorithms, with the example of annual temperatures across the UK.
 
 
 You can get all of the resources for this tutorial from <a href="https://github.com/EdDataScienceEES/tutorial-SarahMorrison6504" target="_blank">this GitHub repository</a>. Clone and download the repo as a zip file, then unzip it.
@@ -166,7 +166,7 @@ future_data$upper_ci <- predictions_with_ci[, "upr"]  # add column for upper ci
 Now we can plot our future predictions!
 
 ```r
-ggplot(future_data, aes(x = year, y = predicted_ann, color = Country)) +  
+linear_future_predict <- ggplot(future_data, aes(x = year, y = predicted_ann, color = Country)) +  
   geom_line() +
   geom_point() +
   geom_ribbon(aes(ymin = lower_ci, ymax = upper_ci, fill = Country), alpha = 0.2) +
@@ -340,62 +340,76 @@ Taking into account seasonal changes for example, may increase the accuracy of o
 
 k NN regression can also be useful for making projections like linear models ! We wil use the same example of UK annual mean temperatures to compare the projections made by k NN regression compared to linear regression.
 
-## Step 1
+## Step 1- Setting up variables
 
-
+First we need to set up the variables we want to make predictions on. We can do this by making new objects,  `future years` for the range of years we want to include and `countries` to specify what countries we want to make projections of. We can then make a dataframe from these objects. Additionally, we want Country to be a factor, so we must add a new numeric column for country, ( i.e. 1, 2 , 3, 4 each corresponding to a country) for analysis.
 
 ```r
-# Define countries and their numeric value
+# 1. Setting up variables
+future_years <- seq(2024, 2030) # set the range of future years we want to project
+countries <- unique(uk_long$Country)  # unique() finds the different countries in uk_long and makes them an object, 'countries'
 
-countries <- c(1, 2, 3, 4)  # 1 = England, 2 = Northern Ireland, etc.
+future_data <- expand.grid(year = future_years, Country = countries)  # makes a data frame for future years and countries
 
-# Create an empty list to store projections for each country
-all_projections <- list()
+future_data$Country_num <- as.numeric(factor(future_data$Country))  # makes levels of the factor variable country, as a new numeric column 'Country_num'
+```
 
-# Loop over each country to generate projections
-for (country_id in countries) {
-  # Create the future data frame for this country
-  future_data <- data.frame(Country = rep(country_id, length(future_years)), 
-                            Year = scaled_future_years)
-  
-  # Make predictions for this country using knn.reg
-  future_temperatures <- knn.reg(
-    train = trainData[, c("Country", "Year")], 
-    test = future_data, 
-    y = trainData$ann, 
-    k = k_value
-  )
-  
-  # Store the projections in the list
-  projections <- data.frame(Year = future_years, 
-                            Country = country_id, 
-                            Predicted_Temperature = future_temperatures$pred)
-  
-  # Add the projections for this country to the list
-  all_projections[[country_id]] <- projections
-}
+## Step 2 - Scale the data
 
-# Combine all country projections into one dataframe
-all_projections_df <- bind_rows(all_projections)
+Like when we used k NN regression for the observed data, we need to scale our variables `Country_num` and `year`. 
+```
+# 2. Scale the new data
 
-# View the projections for all countries
-head(all_projections_df)
+future_data_scaled <- future_data %>%
+  mutate(year = scale(year), Country_num = scale(Country_num))  # Scale 'year' and 'Country_num' like the original data
+```
 
-# Plot the projections with ggplot
-(ggplot(all_projections_df, aes(x = Year, y = Predicted_Temperature, color = as.factor(Country))) +
+## Step 3 - Using our previous k-NN model make projections
+We will use `temp_training` data from our k NN regression model previously to train the model. the `future_data_scaled` data will be what the predictions will be made for and `train_response` (mean annual temperature) will be the variable that the model is trying to predict. `k` remains the same as previously.
+```
+# 3. Using the model
+knn_predictions <- knn.reg(
+  train = temp_training[, c("year", "Country_num")],  # using our training data's features
+  test = future_data_scaled[, c("year", "Country_num")],  # using our scaled future data's features
+  y = train_response,  # using the actual 'ann' values from the training set
+  k = k
+)$pred
+
+```
+
+## Step 4 - Visualising model results
+
+First we need to combine our predictions with the `future_data` dataframe and add them as a new column. Then we need to make sure that `Country` in `future_data` is a factor and matches the same level as they are in the training data so that the countries are represented correctly. Then we can plot our resuts !
+
+```r
+# 4. Visualising model
+
+future_data$Predicted_ann <- knn_predictions  # combine our predictions with the future_data dataframe
+future_data$Country <- factor(future_data$Country, levels = countries)  # Ensure factor levels match
+
+
+
+(predict_plot <- ggplot(future_data, aes(x = year, y = Predicted_ann, colour = Country)) +
   geom_line(size = 1) +
-  labs(title = "Projected Mean Annual Temperature by Country", 
-       x = "Year", 
-       y = "Predicted Temperature", 
-       color = "Country") +  # Customize the legend title
-  scale_color_manual(values = c('lightpink', 'lightgreen', 'lightblue','violet'),  # Customize the colors if needed
-                     labels = c("England", "Northern Ireland", " Scotland", "Wales")) +  # Set custom country names in the legend
-  theme_minimal()+
-    theme(
-      panel.grid.major = element_blank(),
-      panel.grid.minor = element_blank(),
-      axis.line = element_line(colour = 'black')
-    ))
+  labs(title = 'Future Temperature Predictions (k-NN)', x = 'Year', y = 'Predicted Temperature') +
+  theme_minimal() +
+  theme(
+    panel.grid = element_blank(),
+    axis.line = element_line(colour ='black')
+  ))
+
+print(future_data)  # we can also see the predictions made in the console
+```
+OUTPUT
+
+<img width = '500' height = '400' src = 'https://github.com/user-attachments/assets/08094337-3eca-4e5a-8fc9-1205b0e569d4' />
+
+
+So, we can see that this has slightly more variation compared to the linear regression. We should 
+
+
+<img align = 'left' width = '350' height = '400' src = 'https://github.com/user-attachments/assets/84555dd6-675d-45d1-8925-b147d5c6a9fc' />
+<img align = 'right' width = '350' height = '400' src= 'https://github.com/user-attachments/assets/4793ebe4-7ab6-4cc7-bbde-551f606317eb' />
 
 
 
@@ -403,8 +417,10 @@ head(all_projections_df)
 
 
 
- 
 
+
+
+---------------------------
 ## 3. The third section
 
 More text, code and images.
