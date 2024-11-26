@@ -1,29 +1,36 @@
-# Linear regression vs k NN)
----------------------------
-We will begin with a recap on linear modelling and then continue onto how we can delve deeper into how we can use modelling for future predictions! We will also introduce `knn.reg` and `arima` to make projections, using algorithms from observed data. This is a continuation from the Machine Learning in R Turorial (see here- https://ourcodingclub.github.io/tutorials/machine-learning/) except we will look at continuous data rather than categorical.
+# Linear regression vs k NN) 
+<img align='right' width = '200' height = '150' src='https://github.com/user-attachments/assets/d4a2ae9c-e45c-4988-a839-c9f48980333f' />
 
-<img align='left' width = '200' height = '150' src='https://github.com/user-attachments/assets/d4a2ae9c-e45c-4988-a839-c9f48980333f' />
+We will begin with a recap on linear modelling and then continue onto how we can delve deeper into how we can use modelling for future predictions! We will also introduce `knn.reg` and `arima` to make projections, using algorithms from observed data. This is a continuation from the Machine Learning in R Turorial ([see here](https://ourcodingclub.github.io/tutorials/machine-learning/)) except we will look at continuous data rather than categorical.
+
+
 
 ### Tutorial Aims
+1. Recap linear regression and modelling from [Intro to model design](https://ourcodingclub.github.io/tutorials/model-design/)
+2. Develop and understanding of how linear regression can be used to make future projections of data
+3. Introduce `knn.reg` and how it can be used to model data
+4. Learn how `knn.reg` can be used to make data projections
+5. Recognise when it is appropriate to use each model.
+
+### Steps
 
 #### <a href="#section1"> 1. Linear regression</a>
 
 #### <a href="#section2"> 2. The basics of k NN regression</a>
 
-
-#### <a href="#section3"> 3. Comparing Linear regression and k NN regression </a>
-
+#### <a href="Comparing k NN regression and Linear Regression for making future projections of data"> 3. Comparing Linear regression and k NN regression </a>
 
 
 
 
 
 
-### Background Info
 
-Often when analysing data in ecology and environmental science we use modelling to determine the effect explanatory variables have on response variables such as linear regression and generalised linear models. For example, we can determine the extent to which climate change impacts temperatures or precipitation rates in different areas by looking at observed data over time. 
+### Introduction
 
-But what if we want to see how this will change in the future? We can use linear regression, but what if we want more detailed projections? Or our data is not normally distruibuted? Machine learning can be a useful tool for this and  we will look at the potentail for k NN regression to project continuous data using algorithms, with the example of annual temperatures across the UK.
+Regression is used to estimate the relation between a response variable and at least one predictor variable. This is often used in data analysis in ecology and environmental science. For example, we can determine the extent to which climate change impacts temperatures or precipitation rates in different areas by looking at observed data over time. 
+
+But what if we want to see how this will change in the future? We can use linear regression, but what if we want more detailed projections? Or our data is not normally distruibuted? Machine learning can be a useful tool for this and  we will look at the potentail for one method, k NN regression, to project continuous data using algorithms, with the example of annual temperatures across the UK.
 
 
 You can get all of the resources for this tutorial from <a href="https://github.com/EdDataScienceEES/tutorial-SarahMorrison6504" target="_blank">this GitHub repository</a>. Clone and download the repo as a zip file, then unzip it.
@@ -103,7 +110,7 @@ CountryNorthern Ireland -0.584786   0.058182 -10.051  < 2e-16 ***
 CountryScotland         -2.055071   0.058182 -35.322  < 2e-16 ***
 CountryWales            -0.419857   0.058182  -7.216 1.76e-12 ***
 ```
-Our output shows that generally there is an increase in 0.009 °C per year (from the estimate column for 'year'. 'year' is the reference country, which in this case is England. The table also tells us that Northern Ireland is on average 0.58 °C, Scotland 2°C and Wales 0.42°C cooler than England.
+Our output shows that generally there is an increase in 0.009 °C per year (from the estimate column for 'year'. 'year' is the reference country, which in this case is England. The table also tells us that Northern Ireland is on average 0.58 °C, Scotland 2°C and Wales 0.42°C cooler than England. The standard error is also small suggesting that the fit is good.
 
 We can check the model is appropriate by checking the residuals
 
@@ -188,7 +195,7 @@ Now we can plot our future predictions!
 
 <img width = '500' height = '400' src= 'https://github.com/user-attachments/assets/c0e4b8a8-f107-4847-b824-70ffa0c81ef5' />
 
-Hmm, this does show the likely future temperatures however doesn't seem to show similar variability as we see in the observed data from 1884-2023.... maybe we should try machine learning! 
+Hmm, this does show the likely future temperatures however doesn't seem to show similar variability as we see in the observed data from 1884-2023.... maybe we should try a form of machine learning, k NN regression! 
 
 <a name="section2"></a>
 
@@ -196,7 +203,10 @@ Hmm, this does show the likely future temperatures however doesn't seem to show 
 ### 2.1 Creating a kNN regression model
 kNN (k -Nearest Neighbours) regression is a form of data mining, that essentially predicts values for new data points by averaging the observations in the same 'neighbourhood'. It doesn't require any assumptions to be made about the data and uses algorithm to make predictions. It works by specifying a k value i.e. the number of neighbouring data points (chosen by the data analyst) to predict the outpout as the average of those points. 
 
-<img width = '600' height = '400' src = 'https://github.com/user-attachments/assets/1f3f0061-3738-4cea-b2ef-27fab2ce1424' /> https://www.youtube.com/watch?v=3lp5CmSwrHI - this video also explains k NN regression well!
+<img width = '600' height = '400' src = 'https://github.com/user-attachments/assets/1f3f0061-3738-4cea-b2ef-27fab2ce1424' />
+
+[this video also explains k NN regression well!](https://www.youtube.com/watch?v=3lp5CmSwrHI)
+
 
 
 
@@ -212,9 +222,8 @@ kNN (k -Nearest Neighbours) regression is a form of data mining, that essentiall
 
 
 For more background on how kNN works, read these articles! - 
-
-- https://www.researchgate.net/publication/358510901_Weather_Prediction_System_Using_KNN_Classification_Algorithm#full-text
-- https://bookdown.org/tpinto_home/Regression-and-Classification/k-nearest-neighbours-regression.html
+- [Weather Prediction System Using KNN Classification Algorithm](https://www.researchgate.net/publication/358510901_Weather_Prediction_System_Using_KNN_Classification_Algorithm#full-text)
+- [BioStatistics- K-nearest neightbours regression](https://bookdown.org/tpinto_home/Regression-and-Classification/k-nearest-neighbours-regression.html)
 
 
 
@@ -236,9 +245,13 @@ uk_long$Country <- factor(uk_long$Country)  # make 'Country' a factor, rather th
 # Encode Country as numeric values
 uk_long$Country_num <- as.numeric(uk_long$Country)  # add an extra column for Country_num, giving each country a number
 
-# Scale the 'year' and 'Country_num' columns 
+# Scale the 'year' and 'Country_num' columns
+year_centre <- mean(uk_long$year, na.rm = TRUE)  # uses the mean of 'year' in the original data
+year_scale <- sd(uk_long$year, na.rm = TRUE)     # uses the standard deviation of 'year' in the original data
+
 uk_long_scaled <- uk_long %>%
-  mutate(year = scale(year), Country_num = scale(Country_num))
+ mutate(year = scale(year),
+ Country_num = scale(Country_num))
 ```
 ### Step 2 - Split into training and testing
 
@@ -281,13 +294,15 @@ print(knn_predict)  # print the model predicted mean annual temperatures
 Now we have our predicted values, however its not very helpful to look at them as a list of numbers...
 So lets visualise !!
 
-We can do this by comparing predictions with the actual test data to see how well the model captures the data trends.
+We can do this by comparing predictions with the actual test data to see how well the model captures the data trends. Remember we have to unscale our variables we scaled earlier so that we can compare to the actual values.
 
 ```r
 # Step 4 - visualising the model
+temp_test$unscaled_year <- temp_test$year * year_scale + year_center  # unscale values
 
 # Combine predictions with actual test data for comparison
-combined_data <- data.frame(            # make new dataframe for combined data
+combined_data <- data.frame( # make new dataframe for combined data
+temp_test$unscaled_year <- temp_test$year * year_scale + year_center,  # unscale year  
   year = temp_test$year,                # uses test data year values for the year column
   ann = temp_test$ann,                  # uses test data annual mean temperature values for ann column
   Country = temp_test$Country,          # uses test country data for country column
@@ -295,7 +310,7 @@ combined_data <- data.frame(            # make new dataframe for combined data
 )
 
 # Plot predicted vs actual temperatures
-(predict_plot <- ggplot(combined_data, aes(x = year)) +  # use ggplot to make plot with combined_data d.f
+(predict_plot <- ggplot(combined_data, aes(x = unscaled_year)) +  # use ggplot to make plot with combined_data d.f
   geom_line(aes(y = ann, colour = Country), size = 1, linetype = 'solid') +  # make solid line for test data values
   geom_line(aes(y = Predicted, colour = Country), size = 1, linetype = 'dashed') +  # make dashed line for model predictions
   labs(title = 'Predicted vs Actual Temperatures (k-NN)', x = 'Year', y = 'Temperature') +  # add title
@@ -310,10 +325,13 @@ OUTPUT
 
 
 
-<img width = '500' height = '400' src = 'https://github.com/user-attachments/assets/28aaed4c-f308-4043-afcc-de1ea68cfb0b'/>
+<img width = '500' height = '400' src = 'https://github.com/user-attachments/assets/84d826c2-7593-426c-a7c3-c5087988ed28'/>
 
-<div style="background-color: 'red' ; padding: 10px; border-radius: 5px;">
-NOTE: notice how our x- axis for year is from -1, 0 and 1. This is because we scaled our data. We can still see the detailed trends over time though from this graph, but we need to know the time frame that this is from (1884-2023)!
+In our plot the dashed lines are the model predictions, and we can see that there is more variation than the results of the linear regression, with it matching observed data more. However there is still error associated.
+
+
+
+
 
 
 ### Step 5 - Error - Root Mean Square Error
@@ -354,7 +372,8 @@ First we need to set up the variables we want to make predictions on. We can do 
 future_years <- seq(2024, 2030) # set the range of future years we want to project
 countries <- unique(uk_long$Country)  # unique() finds the different countries in uk_long and makes them an object, 'countries'
 
-future_data <- expand.grid(year = future_years, Country = countries)  # makes a data frame for future years and countries
+future_data <- expand.grid(year = future_years,
+Country = countries)  # makes a data frame for future years and countries
 
 future_data$Country_num <- as.numeric(factor(future_data$Country))  # makes levels of the factor variable country, as a new numeric column 'Country_num'
 ```
@@ -426,8 +445,7 @@ OUTPUT
 
 
 ## 3. Comparing k NN regression and Linear Regression for making future projections of data
-From this we can see that the k NN has a lot more variability throughout the years, which we would expect when we compare this to our plot of the observed data, which is likely due to the model not having any assumptions that the data behaves in a linear
-manner. However, we also must consider that the main basis that k NN works on algorithm and does not show the actual effect that each predictor has as a value. Additionally we should keep in mind that the results of the k NN will change depending on the value of `k` assigned. 
+From this we can see that the k NN has a lot more variability throughout the years, which we would expect when we compare this to our plot of the observed data, which is likely due to the model not having any assumptions that the data behaves in a linear manner. However, we also must consider that the main basis that k NN works on algorithm and does not show the actual effect that each predictor has as a value. Additionally we should keep in mind that the results of the k NN will change depending on the value of `k` assigned. If our dataset had multiple climate explanatory variables, for example seasonal temperatures and humidity, we would find a k NN regression to make more accurate projections than linear regression.
 
 Linear regression still captures the general future trends however, which for the likes of temperature changes, is helpful and easy to communicate to audiences. There is also a summary table associated which explains where the predictions come from which is helpful to
 back up why these projections are expected. It also must be considered that linear regression can only be used if data matches the assumptions of the model (data is normally distributed, data points are independant, variance is similar between groups). 
@@ -442,10 +460,10 @@ Here are some things to consider if you are thinking of using a linear regressio
 
 ## Questions ?
 
-#### 1. So.. using this summary of these two models, which do you think is most appropriate for modelling the observed data we have looked at?
+#### 1. So.. using this summary of these two models, which do you think is most appropriate for modelling the observed data`uk_long`  we have looked at, and for making predictions during the time of observed data?
 <details>
 	<summary>Click to see the answer</summary>
-	Though both show the same general trend of the observed data. k NN highlights the variability that occurs in data, which can be useful when making accurate predictions within the observed data time frame.
+	Though both show the same general trend of the observed data and linear regression has a small amount of error associated. k NN highlights the variability that occurs in data, which can be useful when making accurate predictions within the observed data time frame. By adding more variables into a k NN regression such as seasonal temperatures, we could have even more accurate estimates.
 </details>
 
 
@@ -458,6 +476,14 @@ Here are some things to consider if you are thinking of using a linear regressio
 
 
 ---------------------------
+ So what have we learned?
+
+ ## Learning outcomes
+ 1. You should now be more confident using linear regression and how it can be used to make data projections
+ 2. You should be familiar with `knn.reg` as a method of modelling data
+ 3. You should be able to distinguish when it is appropriate to use each kind of model
+ 4. You should be able to identify the main pros and cons of each model type
+
 
 
 
