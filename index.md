@@ -202,14 +202,9 @@ Hmm, this does show the likely future temperatures however doesn't seem to show 
 
 ## 2. kNN Regression Model
 ### 2.1 Creating a kNN regression model
-kNN (k -Nearest Neighbours) regression is a form of data mining, that essentially predicts values for new data points by averaging the observations in the same 'neighbourhood'. It doesn't require any assumptions to be made about the data and uses algorithm to make predictions. It works by specifying a k value i.e. the number of neighbouring data points (chosen by the data analyst) to predict the outpout as the average of those points. 
+kNN (k -Nearest Neighbours) regression is a form of data mining, that essentially predicts values for new data points by averaging the observations in the same 'neighbourhood'. It doesn't require any assumptions to be made about the data and uses algorithm to make predictions. It works by specifying a k value i.e. the number of neighbouring data points (chosen by the data analyst) to predict the outpout as the average of those points. The result of the model will depend on the `k` value chosen, with varying results depending on the number of neighbours chosen. The figure below from [this article](https://medium.com/analytics-vidhya/k-neighbors-regression-analysis-in-python-61532d56d8e4) shows the difference in model results based on the `k` value chosen.
 
-<img width = '600' height = '400' src = 'https://github.com/user-attachments/assets/1f3f0061-3738-4cea-b2ef-27fab2ce1424' />
-
-[this video also explains k NN regression well!](https://www.youtube.com/watch?v=3lp5CmSwrHI)
-
-
-
+<img width = '800' height = '400' src = 'https://github.com/user-attachments/assets/f4bdb46f-c288-4d95-b9ac-c5e067d20ddb'/>
 
 
 
@@ -225,6 +220,7 @@ kNN (k -Nearest Neighbours) regression is a form of data mining, that essentiall
 For more background on how kNN works, read these articles! - 
 - [Weather Prediction System Using KNN Classification Algorithm](https://www.researchgate.net/publication/358510901_Weather_Prediction_System_Using_KNN_Classification_Algorithm#full-text)
 - [BioStatistics- K-nearest neightbours regression](https://bookdown.org/tpinto_home/Regression-and-Classification/k-nearest-neighbours-regression.html)
+- [this video also explains k NN regression well!](https://www.youtube.com/watch?v=3lp5CmSwrHI)
 
 
 
@@ -479,13 +475,20 @@ Here are some things to consider if you are thinking of using a linear regressio
 ---------------------------
  So what have we learned?
 
+In terms of modelling observed data, linear regression can be most useful for data that follows a linear pattern and is normally distributed. k NN regression on the other hand, can be useful for complex, non-parametric datasets. Even for `uk_long` however, k NN regression can effectively show the variation that occurs in a dataset which can be useful for making precise estimates during the observed data time frame.
+
+In terms of projecting data, we have discussed that for a simple dataset like `uk_long`, linear regression would be the most appropriate, as the model gives us estimates of the yearly increases in temperature. However if we were to use this for a news article, the k NN regression projection plot may show a more realistic trend that mean annual temperature data takes. 
+
+# Challenge!
+So this dataset was probably not the most obvious choice to use for k NN regression, however what if we wanted to look at more than one variable at a time?
+For example, what if we wanted to see how temperature change and precipitation change are related. The dataset is `climate_data.csv` in the challenge repo. Try and make a k NN regression analysis using what you've learned from this tutorial!!
+
 ## Learning outcomes
 
  1. You should now be more confident using linear regression and how it can be used to make data projections
  2. You should be familiar with `knn.reg` as a method of modelling data
  3. You should be able to distinguish when it is appropriate to use each kind of model
  4. You should be able to identify the main pros and cons of each model type
-
 
 
 
