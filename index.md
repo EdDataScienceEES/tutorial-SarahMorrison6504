@@ -478,7 +478,8 @@ Here are some things to consider if you are thinking of using a linear regressio
 ---------------------------
  So what have we learned?
 
- ##  Learning outcomes
+## Learning outcomes
+
  1. You should now be more confident using linear regression and how it can be used to make data projections
  2. You should be familiar with `knn.reg` as a method of modelling data
  3. You should be able to distinguish when it is appropriate to use each kind of model
