@@ -1,9 +1,8 @@
-# Linear regression vs k NN) 
+<img width = '1000' height = '300' src = 'https://github.com/user-attachments/assets/8dc51748-c663-4ac7-ac13-e9cf2d67c732' />
+
 <img align='right' width = '200' height = '150' src='https://github.com/user-attachments/assets/d4a2ae9c-e45c-4988-a839-c9f48980333f' />
 
-We will begin with a recap on linear modelling and then continue onto how we can delve deeper into how we can use modelling for future predictions! We will also introduce `knn.reg` and `arima` to make projections, using algorithms from observed data. This is a continuation from the Machine Learning in R Turorial ([see here](https://ourcodingclub.github.io/tutorials/machine-learning/)) except we will look at continuous data rather than categorical.
-
-
+*Created by Sarah Morrison - November 2024*
 
 ### Tutorial Aims
 1. Recap linear regression and modelling from [Intro to model design](https://ourcodingclub.github.io/tutorials/model-design/)
@@ -31,6 +30,8 @@ We will begin with a recap on linear modelling and then continue onto how we can
 Regression is used to estimate the relation between a response variable and at least one predictor variable. This is often used in data analysis in ecology and environmental science. For example, we can determine the extent to which climate change impacts temperatures or precipitation rates in different areas by looking at observed data over time. 
 
 But what if we want to see how this will change in the future? We can use linear regression, but what if we want more detailed projections? Or our data is not normally distruibuted? Machine learning can be a useful tool for this and  we will look at the potentail for one method, k NN regression, to project continuous data using algorithms, with the example of annual temperatures across the UK.
+
+We will begin with a recap on linear modelling and then continue onto how we can delve deeper into how we can use modelling for future predictions! We will also introduce `knn.reg` and `arima` to make projections, using algorithms from observed data. This is a continuation from the Machine Learning in R Turorial ([see here](https://ourcodingclub.github.io/tutorials/machine-learning/)) except we will look at continuous data rather than categorical.
 
 
 You can get all of the resources for this tutorial from <a href="https://github.com/EdDataScienceEES/tutorial-SarahMorrison6504" target="_blank">this GitHub repository</a>. Clone and download the repo as a zip file, then unzip it.
