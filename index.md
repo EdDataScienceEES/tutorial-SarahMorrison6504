@@ -492,6 +492,7 @@ For example, what if we wanted to see how temperature change and precipitation c
 
 <details>
  <summary>Click to see the solution</summary>
+ <pre><code class="language-r">
 
 ```{r}
 # First lets import and inspect the data
@@ -563,6 +564,7 @@ theme(
 panel.grid = element_blank(),  # removes gridlines
 axis.line = element_line(colour = 'black')))  # adds black lines around the axes
 ```
+</code></pre>
 </details>
 
 ## What do these plots show?
