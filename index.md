@@ -484,7 +484,7 @@ In terms of modelling observed data, linear regression can be most useful for da
 In terms of projecting data, we have discussed that for a simple dataset like `uk_long`, linear regression would be the most appropriate, as the model gives us estimates of the yearly increases in temperature. However if we were to use this for a news article, the k NN regression projection plot may show a more realistic trend that mean annual temperature data takes. 
 
 # Challenge!
-So this dataset was probably not the most obvious choice to use for k NN regression, however what if we wanted to look at more than one variable at a time?
+So this dataset was probably not the most obvious choice to use for k NN regression, however what if we wanted to look at more than one continuous variable at a time?
 For example, what if we wanted to see how temperature change and precipitation change are related. The dataset is `climate_data.csv` in the challenge repo which was randomly generated using code in the [`climate_data_script`](add link) in the `data` folder. The data contains precipitation (in mm) and temperature change (in °C) values. (as this is dummy data, lets just say this is repeated measurements from one area). Try and make a k NN regression analysis for this data to model the relationship between precipitation and temperature change, using what you've learned from this tutorial!! Plot these two graphs, one showing the predicted vs actual precipitation change and another to visualise the relationship between temperature change and predicted precipitation change:
 
 
