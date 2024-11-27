@@ -344,7 +344,6 @@ When modelling, it is often useful to find an error value to take into account t
 
 
 
-</div>
 
 ```r
 rmse <- sqrt(mean((combined_data$ann - combined_data$Predicted)^2, na.rm = TRUE))  # formula to calculate RMSE
@@ -486,7 +485,13 @@ In terms of projecting data, we have discussed that for a simple dataset like `u
 
 # Challenge!
 So this dataset was probably not the most obvious choice to use for k NN regression, however what if we wanted to look at more than one variable at a time?
-For example, what if we wanted to see how temperature change and precipitation change are related. The dataset is `climate_data.csv` in the challenge repo which was randomly generated using code in the [`climate_data_script`](add link) in the `data` folder. The data contains precipitation (in mm) and temperature change (in °C) values. (as this is dummy data, lets just say this is repeated measurements from one area). Try and make a k NN regression analysis for this data to model the relationship between precipitation and temperature change, using what you've learned from this tutorial!! Plot two graphs, one showing the predicted vs actual precipitation change and another to visualise the relationship between temperature change and predicted precipitation change.
+For example, what if we wanted to see how temperature change and precipitation change are related. The dataset is `climate_data.csv` in the challenge repo which was randomly generated using code in the [`climate_data_script`](add link) in the `data` folder. The data contains precipitation (in mm) and temperature change (in °C) values. (as this is dummy data, lets just say this is repeated measurements from one area). Try and make a k NN regression analysis for this data to model the relationship between precipitation and temperature change, using what you've learned from this tutorial!! Plot these two graphs, one showing the predicted vs actual precipitation change and another to visualise the relationship between temperature change and predicted precipitation change:
+
+
+<img width = '300' height = '400' src = 'https://github.com/user-attachments/assets/e618f57a-4768-4ee5-a463-3544ab3463dd' />
+
+<img width = '400' height = '400' src ='https://github.com/user-attachments/assets/ca7392a8-1bba-4edb-a726-b1e1c815100f' />
+
 
 <details>
 	<summary>Click to see the solution</summary>
@@ -548,15 +553,7 @@ combined_data <- data.frame(  # make new dataframe for combined data
 theme(
 panel.grid = element_blank(),  # remove grid lines
 axis.line = element_line(colour = 'black')))  # add axes lines
-```
 
-
-OUTPUT
-<img width = '300' height = '300' src = 'https://github.com/user-attachments/assets/e618f57a-4768-4ee5-a463-3544ab3463dd' />
-
-
-
-```r
 # Plot for prdicted precipitation change and temperature change
 (temp_plot <- ggplot(testTemp, aes(x = Temperature_Change, y = Predicted_Precipitation)) +  # use ggplot to make figure of temperature vs predicted precipitation change
   geom_point(aes(color = Precipitation_Change), alpha = 0.6) +  # adds coloured points for actual precipitation change
@@ -569,8 +566,6 @@ theme(
 panel.grid = element_blank(),  # removes gridlines
 axis.line = element_line(colour = 'black')))  # adds black lines around the axes
 ```
-OUTPUT
-<img width = '400' height = '400' src ='https://github.com/user-attachments/assets/ca7392a8-1bba-4edb-a726-b1e1c815100f' />
 </details>
 
 
