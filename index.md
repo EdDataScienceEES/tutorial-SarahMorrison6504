@@ -5,7 +5,6 @@ date: November 2024
 author: Sarah Morrison
 output: 
 html_document:
-self_contained: true
 includes:
 in_header: header.html
 ---
