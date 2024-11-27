@@ -485,14 +485,17 @@ For example, what if we wanted to see how temperature change and precipitation c
 
 <details>
 	<summary>Click to see the solution</summary>
+
 First lets import and inspect the data
+
 ```r
 setwd('your_filepath')  # set working directory
-
 head(climate_data)  # view structure of data
 str(climate_data)  # get summary of the first 6 rows
-```
+ ```
+
 Lets split our data into training and testing sets
+
 ```r
 set.seed(1234)  # set seed for reproducibility
 
@@ -501,7 +504,9 @@ datasample <- sample(2, nrow(climate_data), replace = TRUE, prob = c(0.8, 0.2)) 
 trainData <- climate_data[datasample == 1, ]  # set training set (80% of the data)
 testData <- climate_data[datasample == 2, ]   # set testing set (20% of the data)
 ```
+
 Now we can use our model
+
 ```r
 k <- 5  # number of neighbors
 train_response <- trainTemp$Precipitation_Change  # setting the response variable (precipitation change)
@@ -543,7 +548,6 @@ OUTPUT
 <img width = '300' height = '300' src = 'https://github.com/user-attachments/assets/e618f57a-4768-4ee5-a463-3544ab3463dd' />
 
 ```r
-
 # Plot for prdicted precipitation change and temperature change
 (temp_plot <- ggplot(testTemp, aes(x = Temperature_Change, y = Predicted_Precipitation)) +  # use ggplot to make figure of temperature vs predicted precipitation change
   geom_point(aes(color = Precipitation_Change), alpha = 0.6) +  # adds coloured points for actual precipitation change
