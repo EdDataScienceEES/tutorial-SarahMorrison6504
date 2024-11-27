@@ -491,8 +491,8 @@ For example, what if we wanted to see how temperature change and precipitation c
 <img width = '400' height = '400' src ='https://github.com/user-attachments/assets/ca7392a8-1bba-4edb-a726-b1e1c815100f' />
 
 
-<button class= "reveal-btn">Click to see the solution</button>
-<div class="code-container" style="display:none;">
+<details>
+    <summary>Click to see the solution</summary>
 
 ```{r}
 # First lets import and inspect the data
@@ -564,7 +564,7 @@ theme(
 panel.grid = element_blank(),  # removes gridlines
 axis.line = element_line(colour = 'black')))  # adds black lines around the axes
 ```
-</div> <script> // JavaScript for toggling visibility document.querySelector('.reveal-btn').addEventListener('click', function() { var codeContainer = document.querySelector('.code-container'); if (codeContainer.style.display === 'none') { codeContainer.style.display = 'block'; } else { codeContainer.style.display = 'none'; } }); </script>
+</details>
 
 ## What do these plots show?
 
