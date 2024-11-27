@@ -49,7 +49,7 @@ You can get all of the resources for this tutorial from <a href="https://github.
 ## 1. Linear Regression 
 ### Getting Started
 We will be using the dataset `uk_long.csv` which contains the mean annual temperatures from 1884-2023 in England, Scotland, Wales and Northern Ireland. This dataset was created by compiling data from the [Met Office](https://www.metoffice.gov.uk/research/climate/maps-and-data/uk-and-regional-series). 
-(See how this was compiled in the [data script](https://github.com/EdDataScienceEES/tutorial-SarahMorrison6504/tree/master/data)!)
+(See how this was compiled in the [`making.uklong.R` script](https://github.com/EdDataScienceEES/tutorial-SarahMorrison6504/blob/master/datascripts/making.uklong.R)!
 
 
 Be sure to setwd to where you located the unzipped files. We will be using the following packages, so make sure to have them downloaded and loaded onto a new `R Script`:
@@ -484,7 +484,7 @@ Here are some things to consider if you are thinking of using a linear regressio
 
 # Challenge!
 So this dataset was probably not the most obvious choice to use for k NN regression, however what if we wanted to look at more than one continuous variable at a time?
-For example, what if we wanted to see how temperature change and precipitation change are related. The dataset is `climate_data.csv` in the challenge repo which was randomly generated using code in the [`climate_data_script`](add link) in the `data` folder. The data contains precipitation (in mm) and temperature change (in °C) values. (as this is dummy data, lets just say this is repeated measurements from one area). Try and make a k NN regression analysis for this data to model the relationship between precipitation and temperature change, using what you've learned from this tutorial!! Plot these two graphs, one showing the predicted vs actual precipitation change and another to visualise the relationship between temperature change and predicted precipitation change:
+For example, what if we wanted to see how temperature change and precipitation change are related. The dataset is `climate_data.csv` in the challenge repo which was randomly generated using code in the [`climate.data.Rscript`](https://github.com/EdDataScienceEES/tutorial-SarahMorrison6504/blob/master/datascripts/climate.data.script.R). The data contains precipitation (in mm) and temperature change (in °C) values. (as this is dummy data, lets just say this is repeated measurements from one area). Try and make a k NN regression analysis for this data to model the relationship between precipitation and temperature change, using what you've learned from this tutorial!! Plot these two graphs, one showing the predicted vs actual precipitation change and another to visualise the relationship between temperature change and predicted precipitation change:
 
 
 <img width = '300' height = '400' src = 'https://github.com/user-attachments/assets/e618f57a-4768-4ee5-a463-3544ab3463dd' />
