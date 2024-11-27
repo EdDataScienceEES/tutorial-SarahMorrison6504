@@ -488,7 +488,7 @@ For example, what if we wanted to see how temperature change and precipitation c
 
 First lets import and inspect the data
 
-```r
+```{r}
 setwd('your_filepath')  # set working directory
 head(climate_data)  # view structure of data
 str(climate_data)  # get summary of the first 6 rows
@@ -496,7 +496,7 @@ str(climate_data)  # get summary of the first 6 rows
 
 Lets split our data into training and testing sets
 
-```r
+```{r}
 set.seed(1234)  # set seed for reproducibility
 
 datasample <- sample(2, nrow(climate_data), replace = TRUE, prob = c(0.8, 0.2))  # randomly generate our sample with a ratio of 4/5 to 1/5 for training and testing
