@@ -481,7 +481,85 @@ In terms of projecting data, we have discussed that for a simple dataset like `u
 
 # Challenge!
 So this dataset was probably not the most obvious choice to use for k NN regression, however what if we wanted to look at more than one variable at a time?
-For example, what if we wanted to see how temperature change and precipitation change are related. The dataset is `climate_data.csv` in the challenge repo. Try and make a k NN regression analysis using what you've learned from this tutorial!!
+For example, what if we wanted to see how temperature change and precipitation change are related. The dataset is `climate_data.csv` in the challenge repo which was randomly generated using code in the [`climate_data_script`](add link) in the `data` folder. The data contains precipitation (in mm) and temperature change (in °C) values. (as this is dummy data, lets just say this is repeated measurements from one area). Try and make a k NN regression analysis for this data to model the relationship between precipitation and temperature change, using what you've learned from this tutorial!! Plot two graphs, one showing the predicted vs actual precipitation change and another to visualise the relationship between temperature change and predicted precipitation change.
+
+<details>
+	<summary>Click to see the solution</summary>
+First lets import and inspect the data
+```r
+setwd('your_filepath')  # set working directory
+
+head(climate_data)  # view structure of data
+str(climate_data)  # get summary of the first 6 rows
+```
+Lets split our data into training and testing sets
+```r
+set.seed(1234)  # set seed for reproducibility
+
+datasample <- sample(2, nrow(climate_data), replace = TRUE, prob = c(0.8, 0.2))  # randomly generate our sample with a ratio of 4/5 to 1/5 for training and testing
+
+trainData <- climate_data[datasample == 1, ]  # set training set (80% of the data)
+testData <- climate_data[datasample == 2, ]   # set testing set (20% of the data)
+```
+Now we can use our model
+```r
+k <- 5  # number of neighbors
+train_response <- trainTemp$Precipitation_Change  # setting the response variable (precipitation change)
+
+knn_precip_predict <- knn.reg(
+  train = trainTemp[, c("Temperature_Change")],  # set temperature change as predictor in the data for training
+  test = testTemp[, c("Temperature_Change")],       # set temperature change as predictor in data for testing
+  y = train_response,                                # set response variables
+  k = k                                              # number of neighbours
+)$pred
+```
+
+Now to visualise! 
+
+```r
+testTemp$Predicted_Precipitation <- knn_precip_predict  # add column for predictions to the testTemp dataframe
+
+# Combine predictions with actual test data
+combined_data <- data.frame(  # make new dataframe for combined data
+  Actual = testTemp$Precipitation_Change,  # add column for actual values
+  Predicted = testTemp$Predicted_Precipitation  # add column for model predictions on precipitation change
+)
+
+# Plotting the model
+
+# plot for actual vs model predicted precipitation values
+(climate_plot <- ggplot(combined_data, aes(x = Actual, y = Predicted)) +  # use ggplot to make plot with combined_data d.f
+  geom_point(color = 'blue') +  # add blue observed data points
+  geom_abline(slope = 1, intercept = 0, color = 'red', linetype = "dashed") +  # add dashed line for model predictions
+  labs(title = "Actual vs Predicted Precipitation Change",  # add title
+       x = "Actual Precipitation Change (mm)",  # add axis labels
+       y = "Predicted Precipitation Change (mm)") +
+  theme_minimal()+  # give plot minimal theme
+theme(
+panel.grid = element_blank(),  # remove grid lines
+axis.line = element_line(colour = 'black')))  # add axes lines
+```
+OUTPUT
+<img width = '300' height = '300' src = 'https://github.com/user-attachments/assets/e618f57a-4768-4ee5-a463-3544ab3463dd' />
+
+```r
+
+# Plot for prdicted precipitation change and temperature change
+(temp_plot <- ggplot(testTemp, aes(x = Temperature_Change, y = Predicted_Precipitation)) +  # use ggplot to make figure of temperature vs predicted precipitation change
+  geom_point(aes(color = Precipitation_Change), alpha = 0.6) +  # adds coloured points for actual precipitation change
+  geom_smooth(method = "loess", color = "blue", se = FALSE) +  # adds a LOESS smoothered line to show the trend, se = FALSE removes confidence intervals
+  labs(title = "KNN Model Predictions vs Temperature Change", # adds title
+       x = "Temperature Change",  # adds axis labels
+       y = "Predicted Precipitation Change") +
+  theme_minimal()+  # minimalistic theme
+theme(
+panel.grid = element_blank(),  # removes gridlines
+axis.line = element_line(colour = 'black')))  # adds black lines around the axes
+```
+OUTPUT
+<img width = '400' height = '400' src ='https://github.com/user-attachments/assets/ca7392a8-1bba-4edb-a726-b1e1c815100f' />
+</details>
+
 
 ## Learning outcomes
 
