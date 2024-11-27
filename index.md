@@ -2,6 +2,7 @@
 title: 'Linear regression vs k NN regression'
 output: 
 html_document:
+self_contained: true
 ---
 
 <img width = '1000' height = '300' src = 'https://github.com/user-attachments/assets/8dc51748-c663-4ac7-ac13-e9cf2d67c732' />
