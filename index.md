@@ -468,7 +468,7 @@ Here are some things to consider if you are thinking of using a linear regressio
 #### 2. What about the projected data?
 <details>
 	<summary>Click to see the answer</summary>
-	Considering that we have data that is linear and doesn't include too many explanatory variables, linear regression may be more appropriate and can also communicate the average increase in temperature per year.
+	Considering that we have data that is linear and doesn't include too many explanatory variables, linear regression may be more appropriate and can also communicate the average increase in temperature per year. As the model gives us an estimate of changes throught the years, it also avoids misleading readers.
 </details>
 
 
