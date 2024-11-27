@@ -17,7 +17,7 @@ plugins:
 # Site settings
 encoding: utf-8
 lang: en-GB
-title: "Coding Club"
+title: ""
 logo: "/assets/img/logos/logo_hex.svg"
 description: ""
 baseurl: ""
