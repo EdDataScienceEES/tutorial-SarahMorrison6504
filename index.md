@@ -226,7 +226,7 @@ Hmm, this does show the likely future temperatures however doesn't seem to show 
 
 ## 2. kNN Regression Model
 <a name="section2.1"></a>
-### 2.1 Creating a kNN regression model
+## 2.1 Creating a kNN regression model
 kNN (k -Nearest Neighbours) regression is a form of data mining, that essentially predicts values for new data points by averaging the observations in the same 'neighbourhood'. It doesn't require any assumptions to be made about the data and uses algorithm to make predictions. It works by specifying a k value i.e. the number of neighbouring data points (chosen by the data analyst) to predict the outpout as the average of those points. The result of the model will depend on the `k` value chosen, with varying results depending on the number of neighbours chosen. The figure below from [this article](https://medium.com/analytics-vidhya/k-neighbors-regression-analysis-in-python-61532d56d8e4) shows the difference in model results based on the `k` value chosen. With fewer `k` values tending to predict less variation i.e less sensitive to outliers in data.
 
 <img width = '800' height = '400' src = 'https://github.com/user-attachments/assets/f4bdb46f-c288-4d95-b9ac-c5e067d20ddb'/>
@@ -378,7 +378,7 @@ OUTPUT
 This tells us that for each prediction made by the model, it is inaccurate by on average 0.5 °C from the true (observed values). 0.5°C is a fairly good RMSE especially as we are only taking into account 2 varaibles (`year` and `ann`).
 Taking into account seasonal changes for example, may increase the accuracy of our models predictions, but for simplicity we will leave the model as is!
 <a name="section2.2"></a>
-### 2.2 Making projections from k NN regression
+## 2.2 Making projections from k NN regression
 
 k NN regression can also be useful for making projections like linear models ! We wil use the same example of UK annual mean temperatures to compare the projections made by k NN regression compared to linear regression.
 
