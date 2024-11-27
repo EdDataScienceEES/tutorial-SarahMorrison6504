@@ -498,7 +498,6 @@ First lets import and inspect the data
 setwd('your_filepath')  # set working directory
 head(climate_data)  # view structure of data
 str(climate_data)  # get summary of the first 6 rows
-
 ```
 
 Lets split our data into training and testing sets
