@@ -564,7 +564,7 @@ theme(
 panel.grid = element_blank(),  # removes gridlines
 axis.line = element_line(colour = 'black')))  # adds black lines around the axes
 ```
-</details>
+</details>```
 
 ## What do these plots show?
 
