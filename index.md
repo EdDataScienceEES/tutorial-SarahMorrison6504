@@ -1,3 +1,8 @@
+---
+title : Linear regression vs k NN regression
+output : html_document
+---
+
 <img width = '1000' height = '300' src = 'https://github.com/user-attachments/assets/8dc51748-c663-4ac7-ac13-e9cf2d67c732' />
 
 <img align='right' width = '200' height = '150' src='https://github.com/user-attachments/assets/d4a2ae9c-e45c-4988-a839-c9f48980333f' />
@@ -494,7 +499,7 @@ setwd('your_filepath')  # set working directory
 head(climate_data)  # view structure of data
 str(climate_data)  # get summary of the first 6 rows
 
-</details>  ```
+```
 
 Lets split our data into training and testing sets
 
