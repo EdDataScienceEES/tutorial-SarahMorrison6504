@@ -492,10 +492,9 @@ For example, what if we wanted to see how temperature change and precipitation c
 
 
 <button class= "reveal-btn">Click to see the solution</button>
-
 <div class="code-container" style="display:none;">
 
-```r
+```{r}
 # First lets import and inspect the data
 
 setwd('your_filepath')  # set working directory
