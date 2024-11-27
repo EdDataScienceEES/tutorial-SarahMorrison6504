@@ -356,7 +356,7 @@ In our plot the dashed lines are the model predictions, and we can see that ther
 
 ### Step 5 - Error - Root Mean Square Error
 
-When modelling, it is often useful to find an error value to take into account the uncertainties with the model. For a k NN regression, a RMSE (root mean square value) is often appropriate. The RMSE essential shows the prediction error of the model. A lower RMSE indicated that the model has high predictive accuracy. Altering the `k` value we assigned as 5 earlier is a way to lower the RMSE. (For more info on RMSE follow this link ! - https://www.sciencedirect.com/topics/engineering/root-mean-square-error)
+When modelling, it is often useful to find an error value to take into account the uncertainties with the model. For a k NN regression, a RMSE (root mean square value) is often appropriate. The RMSE essential shows the prediction error of the model. A lower RMSE indicated that the model has high predictive accuracy. Altering the `k` value we assigned as 5 earlier is a way to lower the RMSE. (For more info on RMSE follow [this link!](https://www.sciencedirect.com/topics/engineering/root-mean-square-error)
 
 <img width = '600' height = '300' src = 'https://github.com/user-attachments/assets/518b328b-4b8d-489c-ba4f-c1cf06f57b4e' />
 
@@ -592,7 +592,7 @@ We can see from the second plot that the relationship is non-linear with peaks a
 
 In terms of modelling observed data, linear regression can be most useful for data that follows a linear pattern and is normally distributed. k NN regression on the other hand, can be useful for complex, non-linear datasets such as `climate_data`. Even for `uk_long` however, k NN regression can effectively show the variation that occurs in a dataset which can be useful for making precise estimates during the observed data time frame.
 
-In terms of projecting data, we have discussed that for a simple dataset like `uk_long`, linear regression would be the most appropriate, as the model gives us estimates of the yearly increases in temperature. However if we were to use this for a news article, the k NN regression projection plot may show a more realistic trend that mean annual temperature data takes. 
+In terms of projecting data, we have discussed that for a simple dataset like `uk_long`, linear regression would be the most appropriate, as the model gives us estimates of the yearly increases in temperature. However in terms of visualising future projections, the k NN regression may show a more realistic trend that mean annual temperature data takes compared to the variation in oberved data. 
 
 ## Learning outcomes
 
