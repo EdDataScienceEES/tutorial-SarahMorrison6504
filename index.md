@@ -27,12 +27,16 @@ custom_css: assets/custom.css
 
 ### Steps
 
-#### <a href="#section1"> 1. Linear regression</a>
+### <a href="#section1"> 1. Linear regression</a>
+##### <a href="section1.1">1.1 Making a simple linear model</a>
+##### <a href="section1.2">1.2 Using linear regression to make data projections</a>
 
-#### <a href="#section2"> 2. The basics of k NN regression</a>
+### <a href="#section2"> 2. k NN regression</a>
+##### <a href="#section2.1"> 2.1 Making a k NN regression model</a>
+##### <a href="#section2.2"> 2.2 Using k NN regression to make data projections</a>
 
-#### <a href="Comparing k NN regression and Linear Regression for making future projections of data"> 3. Comparing Linear regression and k NN regression </a>
-
+### <a href="Comparing k NN regression and Linear Regression for making future projections of data"> 3. Comparing Linear regression and k NN regression </a>
+#### <a href="#section3.1">3.1 Challenge !!
 
 
 
@@ -60,6 +64,8 @@ We will be using the dataset `uk_long.csv` which contains the mean annual temper
 
 Be sure to setwd to where you located the unzipped files. We will be using the following packages, so make sure to have them downloaded and loaded onto a new `R Script`:
 
+<a name="section1.1"></a>
+## 1.1 Making a simple linear model
 ```{r}
 # Set the working directory
 setwd("your_filepath")
@@ -163,6 +169,8 @@ Which gives us:
 
 Modelling can be useful for looking at trends in data and predicting values within the time frame. For example if we wanted to predict what the temperature would be on a specific month within the years of 1884-2023, we could make an estimate from our linear model! We can also use our linear model to make projections of future temperatures!
 
+<a name="section1.2"></a>
+## 1.2 Making projections from our linear model
 First we make a new data frame with columns for Country and future years (here we will look at 2025-2030)
 
 ```{r}
@@ -217,6 +225,7 @@ Hmm, this does show the likely future temperatures however doesn't seem to show 
 <a name="section2"></a>
 
 ## 2. kNN Regression Model
+<a name="section2.1"></a>
 ### 2.1 Creating a kNN regression model
 kNN (k -Nearest Neighbours) regression is a form of data mining, that essentially predicts values for new data points by averaging the observations in the same 'neighbourhood'. It doesn't require any assumptions to be made about the data and uses algorithm to make predictions. It works by specifying a k value i.e. the number of neighbouring data points (chosen by the data analyst) to predict the outpout as the average of those points. The result of the model will depend on the `k` value chosen, with varying results depending on the number of neighbours chosen. The figure below from [this article](https://medium.com/analytics-vidhya/k-neighbors-regression-analysis-in-python-61532d56d8e4) shows the difference in model results based on the `k` value chosen.
 
@@ -368,7 +377,7 @@ OUTPUT
 
 This tells us that for each prediction made by the model, it is inaccurate by on average 0.5 °C from the true (observed values). 0.5°C is a fairly good RMSE especially as we are only taking into account 2 varaibles (`year` and `ann`).
 Taking into account seasonal changes for example, may increase the accuracy of our models predictions, but for simplicity we will leave the model as is!
-
+<a name="section2.2"></a>
 ### 2.2 Making projections from k NN regression
 
 k NN regression can also be useful for making projections like linear models ! We wil use the same example of UK annual mean temperatures to compare the projections made by k NN regression compared to linear regression.
@@ -487,7 +496,7 @@ Here are some things to consider if you are thinking of using a linear regressio
 
 ---------------------------
 
-
+<a name="section3.1"></a>
 # Challenge!
 So this dataset was probably not the most obvious choice to use for k NN regression, however what if we wanted to look at more than one continuous variable at a time?
 For example, what if we wanted to see how temperature change and precipitation change are related. The dataset is `climate_data.csv` in the challenge repo which was randomly generated using code in the [`climate.data.Rscript`](https://github.com/EdDataScienceEES/tutorial-SarahMorrison6504/blob/master/datascripts/climate.data.script.R). The data contains precipitation (in mm) and temperature change (in °C) values. (as this is dummy data, lets just say this is repeated measurements from one area). Try and make a k NN regression analysis for this data to model the relationship between precipitation and temperature change, using what you've learned from this tutorial!! Plot these two graphs, one showing the predicted vs actual precipitation change and another to visualise the relationship between temperature change and predicted precipitation change:
