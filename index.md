@@ -1,6 +1,6 @@
 ---
 
-
+title: 'Linear regression vs k NN regression'
 date: November 2024
 author: Sarah Morrison
 output: 
