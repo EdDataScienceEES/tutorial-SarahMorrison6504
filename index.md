@@ -480,11 +480,7 @@ Here are some things to consider if you are thinking of using a linear regressio
 
 
 ---------------------------
- So what have we learned?
 
-In terms of modelling observed data, linear regression can be most useful for data that follows a linear pattern and is normally distributed. k NN regression on the other hand, can be useful for complex, non-parametric datasets. Even for `uk_long` however, k NN regression can effectively show the variation that occurs in a dataset which can be useful for making precise estimates during the observed data time frame.
-
-In terms of projecting data, we have discussed that for a simple dataset like `uk_long`, linear regression would be the most appropriate, as the model gives us estimates of the yearly increases in temperature. However if we were to use this for a news article, the k NN regression projection plot may show a more realistic trend that mean annual temperature data takes. 
 
 # Challenge!
 So this dataset was probably not the most obvious choice to use for k NN regression, however what if we wanted to look at more than one continuous variable at a time?
@@ -571,6 +567,17 @@ axis.line = element_line(colour = 'black')))  # adds black lines around the axes
 ```
 </details>
 
+## What do these plots show?
+
+The first plot shows the models predictions on precipitation vs the actual precipitation changes.
+The second plot shows the relationship between temperature change and predicted precipitation change with the points on the graph showing the observed precipitation change data, with the gradient scale at the right side of the plot showing the intensity of precipitation change.
+We can see from the second plot that the relationship is non-linear with peaks at a temperature change of ~1°C before declining at ~1.5°C and increasing again. Here, k NN regression is useful for identifying the trends, showing the potential it has for climate modelling and prediction. 
+
+## So what have we learned?
+
+In terms of modelling observed data, linear regression can be most useful for data that follows a linear pattern and is normally distributed. k NN regression on the other hand, can be useful for complex, non-linear datasets such as `climate_data`. Even for `uk_long` however, k NN regression can effectively show the variation that occurs in a dataset which can be useful for making precise estimates during the observed data time frame.
+
+In terms of projecting data, we have discussed that for a simple dataset like `uk_long`, linear regression would be the most appropriate, as the model gives us estimates of the yearly increases in temperature. However if we were to use this for a news article, the k NN regression projection plot may show a more realistic trend that mean annual temperature data takes. 
 
 ## Learning outcomes
 
@@ -580,10 +587,6 @@ axis.line = element_line(colour = 'black')))  # adds black lines around the axes
  4. You should be able to identify the main pros and cons of each model type
 
 
-
-
-<hr>
-<hr>
 
 #### Check out our <a href="https://ourcodingclub.github.io/links/" target="_blank">Useful links</a> page where you can find loads of guides and cheatsheets.
 
