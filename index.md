@@ -59,7 +59,7 @@ Be sure to setwd to where you located the unzipped files. We will be using the f
 setwd("your_filepath")
 
 # Load packages
-library(caret)
+
 library(dplyr)
 library(tidymodels)
 library(ggplot2)
@@ -68,6 +68,8 @@ library(gmodels)
 library(randomForest)
 library(FNN)
 library(ggeffects)
+library(patchwork)
+library(caret)
 ```
 First, lets inspect our data:
 
@@ -193,7 +195,7 @@ Now we can plot our future predictions!
   geom_ribbon(aes(ymin = lower_ci, ymax = upper_ci, fill = Country), alpha = 0.2) +
   labs(title = "Future Temperature Predictions (Linear Regression)",
        x = "Year",
-       y = "Predicted Mean Temperature °C"
+       y = "Predicted Mean Temperature °C",
   theme_minimal()+
   theme(
     panel.grid.major = element_blank(),  # Removes major gridlines
@@ -302,17 +304,15 @@ So lets visualise !!
 We can do this by comparing predictions with the actual test data to see how well the model captures the data trends. Remember we have to unscale our variables we scaled earlier so that we can compare to the actual values.
 
 ```r
-# Step 4 - visualising the model
-temp_test$unscaled_year <- temp_test$year * year_scale + year_center  # unscale values
 
 # Combine predictions with actual test data for comparison
 combined_data <- data.frame( # make new dataframe for combined data
-temp_test$unscaled_year <- temp_test$year * year_scale + year_center,  # unscale year  
   year = temp_test$year,                # uses test data year values for the year column
   ann = temp_test$ann,                  # uses test data annual mean temperature values for ann column
   Country = temp_test$Country,          # uses test country data for country column
-  Predicted = knn_predict               # adds column for the model predictions of annual mean temp
-)
+  Predicted = knn_predict,               # adds column for the model predictions of annual mean temp
+unscaled_year = temp_test$year *year_scale + year_centre)
+
 
 # Plot predicted vs actual temperatures
 (predict_plot <- ggplot(combined_data, aes(x = unscaled_year)) +  # use ggplot to make plot with combined_data d.f
@@ -426,7 +426,7 @@ future_data$Country <- factor(future_data$Country, levels = countries)  # Ensure
   theme(
     panel.grid = element_blank(),
     axis.line = element_line(colour ='black')
-  )))
+  ))
 
 print(future_data)  # we can also see the predictions made in the console
 ```
@@ -518,11 +518,11 @@ testData <- climate_data[datasample == 2, ]   # set testing set (20% of the data
 
 
 k <- 5  # number of neighbors
-train_response <- trainTemp$Precipitation_Change  # setting the response variable (precipitation change)
+train_response <- trainData$Precipitation_Change  # setting the response variable (precipitation change)
 
 knn_precip_predict <- knn.reg(
-  train = trainTemp[, c("Temperature_Change")],  # set temperature change as predictor in the data for training
-  test = testTemp[, c("Temperature_Change")],       # set temperature change as predictor in data for testing
+  train = trainData[, c("Temperature_Change")],  # set temperature change as predictor in the data for training
+  test = testData[, c("Temperature_Change")],       # set temperature change as predictor in data for testing
   y = train_response,                                # set response variables
   k = k                                              # number of neighbours
 )$pred
@@ -531,12 +531,12 @@ knn_precip_predict <- knn.reg(
 # Now to visualise! 
 
 
-testTemp$Predicted_Precipitation <- knn_precip_predict  # add column for predictions to the testTemp dataframe
+testData$Predicted_Precipitation <- knn_precip_predict  # add column for predictions to the testTemp dataframe
 
 # Combine predictions with actual test data
 combined_data <- data.frame(  # make new dataframe for combined data
-  Actual = testTemp$Precipitation_Change,  # add column for actual values
-  Predicted = testTemp$Predicted_Precipitation  # add column for model predictions on precipitation change
+  Actual = testData$Precipitation_Change,  # add column for actual values
+  Predicted = testData$Predicted_Precipitation  # add column for model predictions on precipitation change
 )
 
 # Plotting the model
@@ -554,7 +554,7 @@ panel.grid = element_blank(),  # remove grid lines
 axis.line = element_line(colour = 'black')))  # add axes lines
 
 # Plot for prdicted precipitation change and temperature change
-(temp_plot <- ggplot(testTemp, aes(x = Temperature_Change, y = Predicted_Precipitation)) +  # use ggplot to make figure of temperature vs predicted precipitation change
+(temp_plot <- ggplot(testData, aes(x = Temperature_Change, y = Predicted_Precipitation)) +  # use ggplot to make figure of temperature vs predicted precipitation change
   geom_point(aes(color = Precipitation_Change), alpha = 0.6) +  # adds coloured points for actual precipitation change
   geom_smooth(method = "loess", color = "blue", se = FALSE) +  # adds a LOESS smoothered line to show the trend, se = FALSE removes confidence intervals
   labs(title = "KNN Model Predictions vs Temperature Change", # adds title
