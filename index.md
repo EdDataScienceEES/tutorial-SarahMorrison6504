@@ -53,7 +53,7 @@ We will be using the dataset `uk_long.csv` which contains the mean annual temper
 
 Be sure to setwd to where you located the unzipped files. We will be using the following packages, so make sure to have them downloaded and loaded onto a new `R Script`:
 
-```r
+```{r}
 # Set the working directory
 setwd("your_filepath")
 
@@ -83,7 +83,7 @@ We can see that we have a dataset with 3 variables, 'year', 'ann' and 'Country'.
 ### Lets visualise our data
 (TIP: use () in the command to automatically see the plot!)
 
-```r
+```{r}
 (scatter <- ggplot(uk_long, aes(x = year, y = ann, colour = Country))+  # use ggplot to make scatter plot
     geom_line(size = 1, alpha = 0.6)+  # adjust size of line
     theme_classic()+
@@ -96,7 +96,7 @@ We can see that we have a dataset with 3 variables, 'year', 'ann' and 'Country'.
 We could model this data to determine the extent of the trends in our data.
 First find the distribution:
 
-```r
+```{r}
 hist(uk_long$ann)  # plot histogram to see distribution of our data
 ```
 <img align = 'centre' width = '500' height = '400' src= 'https://github.com/user-attachments/assets/a41073af-e873-45ee-9953-1f31d1ec5f10' />
@@ -104,14 +104,14 @@ hist(uk_long$ann)  # plot histogram to see distribution of our data
 
 As our trends are normally distributed we could use a linear regression to show the changes in temperature over time in each country. 
 
-```r
+```{r}
 annual_lm <- lm(ann ~ year + Country, data = uk_long)  # model considering country as a fixed effect
 
 summary(annual_lm)  # summary table of model
 
 ```
 Output:
-```r
+```{r}
 Coefficients:
                          Estimate Std. Error t value Pr(>|t|)    
 (Intercept)             -8.439224   0.995177  -8.480  < 2e-16 ***
@@ -124,7 +124,7 @@ Our output shows that generally there is an increase in 0.009 °C per year (from
 
 We can check the model is appropriate by checking the residuals
 
-```r
+```{r}
 plot(annual_lm)
 ```
 Which gives us:
@@ -135,14 +135,14 @@ Which gives us:
 So our model has a good fit ! Which shows that the estimates on increases per year are pretty accurate:)
 We can then plot our model predictions against the actual data to visualise the accuracy of the model better!
 
-```r
+```{r}
 
 temp_predict <- uk_long  # change the name of uk_long dataframe to include predictions
 temp_predict$Predicted <- predict(annual_lm, newdata = temp_predict, type = 'response')  # add column for model predictions
 
 ```
 Now we have a new dataframe called temp_predict with the model predictions as an extra column. We can then use this to visualise the model against observed data:
-```r
+```{r}
 
 (lmpredict_plot <- (ggplot(temp_predict, aes(x= year, y = ann, colour = Country))+
   geom_line(aes(y= ann, colour = Country), size =1, linetype = 'solid')+
@@ -158,7 +158,7 @@ Modelling can be useful for looking at trends in data and predicting values with
 
 First we make a new data frame with columns for Country and future years (here we will look at 2025-2030)
 
-```r
+```{r}
 # Define future years
 future_years <- 2025:2030
 
@@ -171,13 +171,13 @@ future_data <- expand.grid(year = future_years, Country = countries)
 ```
 Next we will use our model to make future predictions
 
-```r
+```{r}
 future_data$predicted_ann <- predict(annual_lm, newdata = future_data)  # add column called predicted_ann for our model predictions
 ```
 
 We can also add confidence intervals (ci) to quantify the imprecision associated with our estimates
 
-```r
+```{r}
 predictions_with_ci <- predict(annual_lm, newdata = future_data, interval = 'confidence')  # add ci for predictions
 
 future_data$lower_ci <- predictions_with_ci[, "lwr"]  # add column for lower ci
@@ -187,7 +187,7 @@ future_data$upper_ci <- predictions_with_ci[, "upr"]  # add column for upper ci
 
 Now we can plot our future predictions!
 
-```r
+```{r}
 (linear_future_predict <- ggplot(future_data, aes(x = year, y = predicted_ann, color = Country)) +  
   geom_line() +
   geom_point() +
@@ -244,7 +244,7 @@ First, we will ensure that our data is in the correct format. When completing a 
 
 For k NN and machine learning in general it is best to also scale our data to ensure that all values fall under the same range
 
-```r
+```{r}
 # Step 1: Preprocess the data
 uk_long$Country <- factor(uk_long$Country)  # make 'Country' a factor, rather than character
 
@@ -263,7 +263,7 @@ uk_long_scaled <- uk_long %>%
 
 Next, we will split the data into training and testing sets as mentioned earlier. Here we will also `set.seed` before calling `sample`. This ensures that each time we run the code we are taking the same sample ensuring that the output is the same.
 
-```r
+```{r}
 
 # Step 2: Split data into training and testing sets
 set.seed(1234)  # generate seed
@@ -280,7 +280,7 @@ temp_test <- uk_long_scaled[datasample == 2, ]  # makes testing set from 1/3 of 
 Next we can perform the model. When using `knn.reg()` we have to assign a value to `k` representing he number of neighbours considered in the analysis. Here we will use `k <- 5`, which tells the model that we want it to use 5 neighbours when making predictions. 
 We will then provide the response variable `ann` to tell the model what we want it to make predictions of. We will then use the training and testing sets from earlier to make these predictions. 
 
-```r
+```{r}
 # Step 3: Using knn.reg() for predictions
 k <- 5  # number of neighbours
 train_response <- temp_training$ann  # here we are telling the model what we want the response variable to be, 'ann' (mean annual temperature)
@@ -302,7 +302,7 @@ So lets visualise !!
 
 We can do this by comparing predictions with the actual test data to see how well the model captures the data trends. Remember we have to unscale our variables we scaled earlier so that we can compare to the actual values.
 
-```r
+```{r}
 
 # Combine predictions with actual test data for comparison
 combined_data <- data.frame( # make new dataframe for combined data
@@ -347,7 +347,7 @@ When modelling, it is often useful to find an error value to take into account t
 
 
 
-```r
+```{r}
 rmse <- sqrt(mean((combined_data$ann - combined_data$Predicted)^2, na.rm = TRUE))  # formula to calculate RMSE
 
 print(paste('RMSE', rmse))  # prints the RMSE value in the console
@@ -355,7 +355,7 @@ print(paste('RMSE', rmse))  # prints the RMSE value in the console
 ```
 OUTPUT
 
-```r
+```{r}
 "RMSE 0.502558000113679"
 ```
 
@@ -370,7 +370,7 @@ k NN regression can also be useful for making projections like linear models ! W
 
 First we need to set up the variables we want to make predictions on. We can do this by making new objects,  `future years` for the range of years we want to include and `countries` to specify what countries we want to make projections of. We can then make a dataframe from these objects. Additionally, we want Country to be a factor, so we must add a new numeric column for country, ( i.e. 1, 2 , 3, 4 each corresponding to a country) for analysis.
 
-```r
+```{r}
 # 1. Setting up variables
 future_years <- seq(2024, 2030) # set the range of future years we want to project
 countries <- unique(uk_long$Country)  # unique() finds the different countries in uk_long and makes them an object, 'countries'
@@ -384,7 +384,7 @@ future_data$Country_num <- as.numeric(factor(future_data$Country))  # makes leve
 ### Step 2 - Scale the data
 
 Like when we used k NN regression for the observed data, we need to scale our variables `Country_num` and `year`. 
-```
+```{r}
 # 2. Scale the new data
 
 future_data_scaled <- future_data %>%
@@ -393,7 +393,7 @@ future_data_scaled <- future_data %>%
 
 ### Step 3 - Using our previous k-NN model make projections
 We will use `temp_training` data from our k NN regression model previously to train the model. the `future_data_scaled` data will be what the predictions will be made for and `train_response` (mean annual temperature) will be the variable that the model is trying to predict. `k` remains the same as previously.
-```
+```{r}
 # 3. Using the model
 knn_predictions <- knn.reg(
   train = temp_training[, c("year", "Country_num")],  # using our training data's features
@@ -408,7 +408,7 @@ knn_predictions <- knn.reg(
 
 First we need to combine our predictions with the `future_data` dataframe and add them as a new column. Then we need to make sure that `Country` in `future_data` is a factor and matches the same level as they are in the training data so that the countries are represented correctly. Then we can plot our resuts !
 
-```r
+```{r}
 # 4. Visualising model
 
 future_data$Predicted_ann <- knn_predictions  # combine our predictions with the future_data dataframe
@@ -436,7 +436,7 @@ OUTPUT
 
 Okay, lets compare this to the results of the linear regression predictions...
 
-```r
+```{r}
 panel_plot <- future_predict_plot + linear_future_predict
 print(panel_plot)
 
