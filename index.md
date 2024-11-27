@@ -483,12 +483,33 @@ In terms of projecting data, we have discussed that for a simple dataset like `u
 So this dataset was probably not the most obvious choice to use for k NN regression, however what if we wanted to look at more than one variable at a time?
 For example, what if we wanted to see how temperature change and precipitation change are related. The dataset is `climate_data.csv` in the challenge repo which was randomly generated using code in the [`climate_data_script`](add link) in the `data` folder. The data contains precipitation (in mm) and temperature change (in °C) values. (as this is dummy data, lets just say this is repeated measurements from one area). Try and make a k NN regression analysis for this data to model the relationship between precipitation and temperature change, using what you've learned from this tutorial!! Plot two graphs, one showing the predicted vs actual precipitation change and another to visualise the relationship between temperature change and predicted precipitation change.
 
+---
+title: "Click to see the solution"
+output: html_document
+---
+
+## Challenge!
+
+So this dataset was probably not the most obvious choice to use for KNN regression, however what if we wanted to look at more than one variable at a time? For example, what if we wanted to see how temperature change and precipitation change are related? The dataset is `climate_data.csv` in the challenge repo which was randomly generated using code in the `climate_data_script` in the `data` folder. The data contains precipitation (in mm) and temperature change (in °C) values. (as this is dummy data, lets just say this is repeated data measurements from one area). Try and make a KNN regression analysis for this data to model the relationship between precipitation and temperature change, using what you’ve learned from this tutorial!! Plot two graphs, one showing the predicted vs actual precipitation change and another to visualise the relationship between temperature change and predicted precipitation change.
+
+<details>
+    <summary>Click to see the solution</summary>
+
+### First, let's import and inspect the data
+
+```{r}
+setwd('your_filepath')  # set working directory
+head(climate_data)  # view structure of data
+str(climate_data)  # get summary of the first 6 rows
+```
+</details>
+
 <details>
 	<summary>Click to see the solution</summary>
 
 First lets import and inspect the data
 
-```{r}
+```r
 setwd('your_filepath')  # set working directory
 head(climate_data)  # view structure of data
 str(climate_data)  # get summary of the first 6 rows
@@ -496,7 +517,7 @@ str(climate_data)  # get summary of the first 6 rows
 
 Lets split our data into training and testing sets
 
-```{r}
+```r
 set.seed(1234)  # set seed for reproducibility
 
 datasample <- sample(2, nrow(climate_data), replace = TRUE, prob = c(0.8, 0.2))  # randomly generate our sample with a ratio of 4/5 to 1/5 for training and testing
