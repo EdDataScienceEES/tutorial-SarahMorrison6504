@@ -19,7 +19,7 @@ custom_css: assets/custom.css
 *Created by Sarah Morrison - November 2024*
 
 ### Tutorial Aims
-1. Recap linear regression and modelling from [Intro to model design](https://ourcodingclub.github.io/tutorials/model-design/)
+1. Recap linear regression and modelling ( see [Intro to model design tutorial](https://ourcodingclub.github.io/tutorials/model-design/) for more !)
 2. Develop and understanding of how linear regression can be used to make future projections of data
 3. Introduce `knn.reg` and how it can be used to model data
 4. Learn how `knn.reg` can be used to make data projections
