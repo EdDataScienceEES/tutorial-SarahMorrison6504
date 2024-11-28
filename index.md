@@ -520,6 +520,8 @@ For example, what if we wanted to see how temperature change and precipitation c
 ### First lets import and inspect the data
 
 setwd('your_filepath')  # set working directory
+climate_data <- read.csv('data/climate_data.csv')  # import dataset
+
 head(climate_data)  # view structure of data
 str(climate_data)  # get summary of the first 6 rows
 
