@@ -49,7 +49,7 @@ Regression is used to estimate the relation between a response variable and at l
 
 But what if we want to see how this will change in the future? We can use linear regression, but what if we want more detailed projections? Or our data is not normally distruibuted? Machine learning can be a useful tool for this and  we will look at the potentail for one method, k NN regression, to project continuous data using algorithms, with the example of annual temperatures across the UK.
 
-We will begin with a recap on linear modelling and then continue onto how we can delve deeper into how we can use modelling for future predictions! We will also introduce `knn.reg` and `arima` to make projections, using algorithms from observed data. This is a continuation from the Machine Learning in R Turorial ([see here](https://ourcodingclub.github.io/tutorials/machine-learning/)) except we will look at continuous data rather than categorical.
+We will begin with a recap on linear modelling and then continue onto how we can delve deeper into how we can use modelling for future predictions! We will also introduce `knn.reg` to make projections, using algorithms from observed data. This is a continuation from the Machine Learning in R Turorial ([see here](https://ourcodingclub.github.io/tutorials/machine-learning/)) except we will look at continuous data rather than categorical.
 
 
 You can get all of the resources for this tutorial from <a href="https://github.com/EdDataScienceEES/tutorial-SarahMorrison6504" target="_blank">this GitHub repository</a>. Clone and download the repo as a zip file, then unzip it.
@@ -69,6 +69,7 @@ Be sure to setwd to where you located the unzipped files. We will be using the f
 ```{r}
 # Set the working directory
 setwd("your_filepath")
+uk_long <- read.csv('data/uk_long.csv)
 
 # Load packages
 
@@ -158,14 +159,19 @@ Now we have a new dataframe called temp_predict with the model predictions as an
 ```{r}
 
 (lmpredict_plot <- (ggplot(temp_predict, aes(x= year, y = ann, colour = Country))+
-  geom_line(aes(y= ann, colour = Country), size =1, linetype = 'solid')+
-  geom_line(aes(y= Predicted, colour = Country), size = 1, linetype = 'dashed')+
-  labs(title = 'Predicted vs Actual Temperatures', x = 'Actual', y ='Predicted')))
+                      geom_line(aes(y= ann, colour = Country), size =1, linetype = 'solid')+
+                      geom_line(aes(y= Predicted, colour = Country), size = 1, linetype = 'dashed')+
+                      labs(title = 'Predicted vs Actual Temperatures', x = 'Actual', y ='Predicted'))+
+    theme_minimal()+
+    theme(
+      panel.grid.major = element_blank(),
+      panel.grid.minor = element_blank(),
+      axis.line = element_line(colour = 'black')))
 
 ```
 Which gives us: 
 
-<img width = '500' height = '400' src = 'https://github.com/user-attachments/assets/e1b4ddef-ec99-408d-b7a2-5224ad6cb968' />
+<img width = '500' height = '400' src = 'https://github.com/user-attachments/assets/f8e0638a-c8f0-425b-8d4b-8be6c2affbee' />
 
 Modelling can be useful for looking at trends in data and predicting values within the time frame. For example if we wanted to predict what the temperature would be on a specific month within the years of 1884-2023, we could make an estimate from our linear model! We can also use our linear model to make projections of future temperatures!
 
@@ -204,18 +210,19 @@ Now we can plot our future predictions!
 
 ```{r}
 (linear_future_predict <- ggplot(future_data, aes(x = year, y = predicted_ann, color = Country)) +  
-  geom_line() +
-  geom_point() +
-  geom_ribbon(aes(ymin = lower_ci, ymax = upper_ci, fill = Country), alpha = 0.2) +
-  labs(title = "Future Temperature Predictions (Linear Regression)",
-       x = "Year",
-       y = "Predicted Mean Temperature °C",
-  theme_minimal()+
-  theme(
-    panel.grid.major = element_blank(),  # Removes major gridlines
-    panel.grid.minor = element_blank(),  # Removes minor gridlines
-    axis.line = element_line(color = "black", size = 0.5)  # Adds axes lines
-  )))
+    geom_line() +
+    geom_point() +
+    geom_ribbon(aes(ymin = lower_ci, ymax = upper_ci, fill = Country), alpha = 0.2) +
+    labs(title = "Future Temperature Predictions (Linear Regression)",
+         x = "Year",
+         y = "Predicted Mean Temperature",
+    )+
+         theme_minimal()+
+           theme(
+             panel.grid.major = element_blank(),  # Removes major gridlines
+             panel.grid.minor = element_blank(),  # Removes minor gridlines
+             axis.line = element_line(color = "black")  # Adds axes lines
+           ))
 ```
 
 <img width = '500' height = '400' src= 'https://github.com/user-attachments/assets/c0e4b8a8-f107-4847-b824-70ffa0c81ef5' />
@@ -436,7 +443,7 @@ future_data$Country <- factor(future_data$Country, levels = countries)  # Ensure
   geom_line(size = 1) +
   labs(title = 'Future Temperature Predictions (k-NN)',
  x = 'Year',
- y = 'Predicted Mean Temperature °C') +
+ y = 'Predicted Mean Temperature') +
   theme_minimal() +
   theme(
     panel.grid = element_blank(),
@@ -459,12 +466,12 @@ print(panel_plot)
 ```
 
 OUTPUT
-<img width = '600' height = '400' src = 'https://github.com/user-attachments/assets/2d2f9dca-3c69-44d1-bef2-dafe6fb68726' />
+<img width = '600' height = '400' src = 'https://github.com/user-attachments/assets/9e6459df-2cf6-40d0-8916-9d3ddc68d9ee'/>
 
 
 
 ## 3. Comparing k NN regression and Linear Regression for making future projections of data
-From this we can see that the k NN has a lot more variability throughout the years, which we would expect when we compare this to our plot of the observed data, which is likely due to the model not having any assumptions that the data behaves in a linear manner. However, we also must consider that the main basis that k NN works on algorithm and does not show the actual effect that each predictor has as a value. Additionally we should keep in mind that the results of the k NN will change depending on the value of `k` assigned. If our dataset had multiple climate explanatory variables, for example seasonal temperatures and humidity, we would find a k NN regression to make more accurate projections than linear regression.
+From this we can see that the k NN has a lot more variability throughout the years, which we would expect when we compare this to our plot of the observed data, which is likely due to the model not having any assumptions that the data behaves in a linear manner. However, we also must consider that the main basis that k NN works on algorithm and does not show the actual effect that each predictor has as a value. Additionally we should keep in mind that the results of the k NN will change depending on the value of `k` assigned. If our dataset had multiple climate explanatory variables, for example seasonal temperatures and humidity, we would find a k NN regression to make more accurate projections.
 
 Linear regression still captures the general future trends however, which for the likes of temperature changes, is helpful and easy to communicate to audiences. There is also a summary table associated which explains where the predictions come from which is helpful to
 back up why these projections are expected. It also must be considered that linear regression can only be used if data matches the assumptions of the model (data is normally distributed, data points are independant, variance is similar between groups). 
@@ -482,7 +489,7 @@ Here are some things to consider if you are thinking of using a linear regressio
 #### 1. So.. using this summary of these two models, which do you think is most appropriate for modelling the observed data`uk_long`  we have looked at, and for making predictions during the time of observed data?
 <details>
 	<summary>Click to see the answer</summary>
-	Though both show the same general trend of the observed data and linear regression has a small amount of error associated. k NN highlights the variability that occurs in data, which can be useful when making accurate predictions within the observed data time frame. By adding more variables into a k NN regression such as seasonal temperatures, we could have even more accurate estimates.
+	Both show the same general trend of the observed data and linear regression has a small amount of error associated. k NN highlights the variability that occurs in data, which can be useful when making accurate predictions within the observed data time frame. By adding more variables into a k NN regression such as seasonal temperatures, we could have even more accurate estimates.
 </details>
 
 
@@ -498,8 +505,8 @@ Here are some things to consider if you are thinking of using a linear regressio
 
 <a name="section3.1"></a>
 # Challenge!
-So this dataset was probably not the most obvious choice to use for k NN regression, however what if we wanted to look at more than one continuous variable at a time?
-For example, what if we wanted to see how temperature change and precipitation change are related. The dataset is `climate_data.csv` in the challenge repo which was randomly generated using code in the [`climate.data.Rscript`](https://github.com/EdDataScienceEES/tutorial-SarahMorrison6504/blob/master/datascripts/climate.data.script.R). The data contains precipitation (in mm) and temperature change (in °C) values. (as this is dummy data, lets just say this is repeated measurements from one area). Try and make a k NN regression analysis for this data to model the relationship between precipitation and temperature change, using what you've learned from this tutorial!! Plot these two graphs, one showing the predicted vs actual precipitation change and another to visualise the relationship between temperature change and predicted precipitation change:
+So this dataset was probably not the most obvious choice to use a k NN regression for, however what if we wanted to look at more than one continuous variable at a time?
+For example, what if we wanted to see how temperature change and precipitation change are related. The dataset is `climate_data.csv` in the challenge repo which was randomly generated using code in the [`climate.data.Rscript`](https://github.com/EdDataScienceEES/tutorial-SarahMorrison6504/blob/master/datascripts/climate.data.script.R). The data contains precipitation (in mm) and temperature change (in °C) values. (as this is dummy data, lets just say this is repeated measurements from one area). Try and make a k NN regression analysis for this data to model the relationship between precipitation and temperature change, using what you've learned from this tutorial!! Plot these two graphs, one showing the predicted vs actual precipitation change and another to visualise the relationship between temperature change and precipitation change:
 
 
 <img width = '300' height = '400' src = 'https://github.com/user-attachments/assets/e618f57a-4768-4ee5-a463-3544ab3463dd' />
@@ -535,8 +542,8 @@ k <- 5  # number of neighbors
 train_response <- trainData$Precipitation_Change  # setting the response variable (precipitation change)
 
 knn_precip_predict <- knn.reg(
-  train = trainData[, c("Temperature_Change")],  # set temperature change as predictor in the data for training
-  test = testData[, c("Temperature_Change")],       # set temperature change as predictor in data for testing
+  train = trainData[, c("Temperature_Change"), drop = FALSE],  # set temperature change as predictor in the data for training
+  test = testData[, c("Temperature_Change"), drop = FALSE],       # set temperature change as predictor in data for testing
   y = train_response,                                # set response variables
   k = k                                              # number of neighbours
 )$pred
