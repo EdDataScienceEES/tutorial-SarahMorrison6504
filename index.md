@@ -159,14 +159,14 @@ Now we have a new dataframe called temp_predict with the model predictions as an
 ```{r}
 
 (lmpredict_plot <- (ggplot(temp_predict, aes(x= year, y = ann, colour = Country))+
-                      geom_line(aes(y= ann, colour = Country), size =1, linetype = 'solid')+
-                      geom_line(aes(y= Predicted, colour = Country), size = 1, linetype = 'dashed')+
-                      labs(title = 'Predicted vs Actual Temperatures', x = 'Actual', y ='Predicted'))+
+                      geom_line(aes(y= ann, colour = Country), size =1, linetype = 'solid')+  # add solid trendline for actual data
+                      geom_line(aes(y= Predicted, colour = Country), size = 1, linetype = 'dashed')+  # add dashed line for predicted temperature
+                      labs(title = 'Predicted vs Actual Temperatures', x = 'Actual', y ='Predicted'))+  # add title and axis labels
     theme_minimal()+
     theme(
-      panel.grid.major = element_blank(),
+      panel.grid.major = element_blank(),  # remove gridlines
       panel.grid.minor = element_blank(),
-      axis.line = element_line(colour = 'black')))
+      axis.line = element_line(colour = 'black')))  # add axis lines
 
 ```
 Which gives us: 
